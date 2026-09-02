@@ -42,7 +42,7 @@ const FileTextIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
 )
 const CheckIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 text-emerald-500 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
 )
 
 /* ── Clinic Data ─────────────────────────────────── */
@@ -66,7 +66,7 @@ const physicians = [
       'Newborn First-Week Care, Developmental Milestones & Childhood Asthma',
       'Guaranteed Same-Day Sick Visits for Local Children & Teens',
     ],
-    spotlight: 'rgba(14, 165, 233, 0.22)',
+    spotlight: 'rgba(14, 165, 233, 0.28)',
   },
   {
     name: 'Dr. Ramin Ahmad, M.D.',
@@ -78,7 +78,7 @@ const physicians = [
       'Active Hospital Staff Privileges at HCA Florida North Florida Hospital',
       'Comprehensive Adult Physicals, Hypertension, Diabetes & In-Office Labs',
     ],
-    spotlight: 'rgba(20, 184, 166, 0.22)',
+    spotlight: 'rgba(20, 184, 166, 0.28)',
   },
 ]
 
@@ -90,7 +90,7 @@ const services = [
     highlight: 'Same-Day Sick Care',
     desc: 'Newborn checkups, developmental milestones, and guaranteed same-day sick visits.',
     img: newbornCareImg,
-    spotlight: 'rgba(14, 165, 233, 0.25)',
+    spotlight: 'rgba(14, 165, 233, 0.28)',
   },
   {
     title: 'Adult Primary Care',
@@ -99,7 +99,7 @@ const services = [
     highlight: 'Chronic Care & Labs',
     desc: 'Annual wellness exams, chronic condition care, hypertension, and diabetes management.',
     img: primaryFamilyCareImg,
-    spotlight: 'rgba(20, 184, 166, 0.25)',
+    spotlight: 'rgba(20, 184, 166, 0.28)',
   },
   {
     title: 'Immunizations',
@@ -108,7 +108,7 @@ const services = [
     highlight: 'Full Protection',
     desc: 'CDC-approved childhood vaccines and adult booster shots (Flu, Tdap, Shingrix).',
     img: vaccinationsImg,
-    spotlight: 'rgba(59, 130, 246, 0.25)',
+    spotlight: 'rgba(59, 130, 246, 0.28)',
   },
   {
     title: 'Diagnostic Labs',
@@ -117,12 +117,13 @@ const services = [
     highlight: 'On-Site Testing',
     desc: 'Rapid strep, flu, COVID, urinalysis, complete blood panels, and sports physicals.',
     img: diagnosticLabsImg,
-    spotlight: 'rgba(245, 158, 11, 0.25)',
+    spotlight: 'rgba(245, 158, 11, 0.28)',
   },
 ]
 
 function App() {
-  const [darkMode, setDarkMode] = useState(false)
+  // Default to Dark Blue Navy Theme
+  const [darkMode, setDarkMode] = useState(true)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [submitted, setSubmitted] = useState(false)
 
@@ -140,7 +141,7 @@ function App() {
   ]
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 antialiased overflow-x-hidden flex flex-col w-full">
+    <div className="min-h-screen bg-slate-950 text-slate-100 antialiased overflow-x-hidden flex flex-col w-full">
       {/* ── Top Utility Bar ────────────────────────── */}
       <div className="bg-slate-950 text-slate-300 text-xs py-2 px-4 border-b border-slate-800 w-full">
         <div className="site-container flex flex-col sm:flex-row items-center justify-between gap-2">
@@ -165,8 +166,8 @@ function App() {
         </div>
       </div>
 
-      {/* ── Main Navigation ───────────────────────── */}
-      <nav className="sticky top-0 z-50 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 shadow-sm w-full">
+      {/* ── Main Navigation (DARK BLUE NAVY) ───────────────────────── */}
+      <nav className="sticky top-0 z-50 bg-slate-950/95 backdrop-blur-md border-b border-slate-800 shadow-lg w-full">
         <div className="site-container h-20 flex items-center justify-between gap-4">
           {/* Logo & Clinic Name */}
           <a href="#home" className="flex items-center gap-3 min-w-0">
@@ -174,22 +175,22 @@ function App() {
               HS
             </div>
             <div className="min-w-0">
-              <span className="font-extrabold text-base sm:text-lg text-slate-900 dark:text-white leading-tight block truncate">
+              <span className="font-extrabold text-base sm:text-lg text-white leading-tight block truncate">
                 High Springs Pediatrics &amp; Primary Care
               </span>
-              <span className="text-xs text-sky-600 dark:text-sky-400 font-medium block truncate">
+              <span className="text-xs text-sky-400 font-medium block truncate">
                 Dr. Nasir Ahmed, M.D. &bull; Dr. Ramin Ahmad, M.D.
               </span>
             </div>
           </a>
 
           {/* Desktop Nav Links */}
-          <div className="hidden lg:flex items-center gap-7 text-sm font-semibold text-slate-600 dark:text-slate-300">
+          <div className="hidden lg:flex items-center gap-7 text-sm font-semibold text-slate-300">
             {navLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
-                className="hover:text-sky-600 dark:hover:text-sky-400 transition-colors whitespace-nowrap"
+                className="hover:text-sky-400 transition-colors whitespace-nowrap"
               >
                 {link.label}
               </a>
@@ -200,7 +201,7 @@ function App() {
           <div className="flex items-center gap-3 flex-shrink-0">
             <button
               onClick={() => setDarkMode(!darkMode)}
-              className="p-2 rounded-xl border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800"
+              className="p-2 rounded-xl border border-slate-800 text-slate-300 hover:bg-slate-800"
               aria-label="Toggle Dark Mode"
             >
               {darkMode ? <SunIcon /> : <MoonIcon />}
@@ -218,7 +219,7 @@ function App() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2 rounded-xl text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800"
+              className="lg:hidden p-2 rounded-xl text-slate-300 hover:bg-slate-800"
               aria-label="Toggle Mobile Menu"
             >
               {mobileMenuOpen ? <CloseIcon /> : <MenuIcon />}
@@ -228,13 +229,13 @@ function App() {
 
         {/* Mobile Dropdown */}
         {mobileMenuOpen && (
-          <div className="lg:hidden border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-6 py-4 space-y-2">
+          <div className="lg:hidden border-t border-slate-800 bg-slate-950 px-6 py-4 space-y-2">
             {navLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="block py-2 text-sm font-semibold text-slate-700 dark:text-slate-200"
+                className="block py-2 text-sm font-semibold text-slate-200"
               >
                 {link.label}
               </a>
@@ -243,7 +244,7 @@ function App() {
         )}
       </nav>
 
-      {/* ── Hero Section (PROMINENT CLINIC BACKGROUND + CENTERED) ── */}
+      {/* ── Hero Section (DARK BLUE NAVY + PROMINENT CLINIC BACKGROUND) ── */}
       <section id="home" className="section-wrapper relative bg-slate-950 text-white py-24 lg:py-36 overflow-hidden">
         {/* Prominent Clinic Building Background Image */}
         <div className="absolute inset-0">
@@ -252,7 +253,7 @@ function App() {
             alt="High Springs Pediatrics & Primary Care Clinic Building"
             className="w-full h-full object-cover opacity-60 scale-105 transition-transform duration-1000"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-950/70 via-slate-950/50 to-slate-950/90" />
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-950/75 via-slate-950/50 to-slate-950/95" />
         </div>
 
         {/* Ambient Particles */}
@@ -278,15 +279,15 @@ function App() {
             Pediatric Care &amp; Adult Internal Medicine
           </h1>
 
-          <p className="text-base sm:text-lg md:text-xl text-slate-100 mb-8 leading-relaxed max-w-2xl mx-auto font-medium drop-shadow-md text-center">
+          <p className="text-base sm:text-lg md:text-xl text-slate-200 mb-8 leading-relaxed max-w-2xl mx-auto font-medium drop-shadow-md text-center">
             Compassionate, multi-generational family healthcare led by founding pediatrician <strong>Dr. Nasir Ahmed, M.D.</strong> and internal medicine physician <strong>Dr. Ramin Ahmad, M.D.</strong>
           </p>
 
           {/* Centered Feature Badges */}
           <div className="flex flex-wrap items-center justify-center gap-2.5 text-xs sm:text-sm font-medium text-slate-200 mb-9 max-w-xl mx-auto">
-            <span className="px-3.5 py-1.5 rounded-xl bg-slate-900/60 backdrop-blur-md border border-white/20 shadow-md">✓ Guaranteed Same-Day Sick Visits</span>
-            <span className="px-3.5 py-1.5 rounded-xl bg-slate-900/60 backdrop-blur-md border border-white/20 shadow-md">✓ On-Site Diagnostic Labs</span>
-            <span className="px-3.5 py-1.5 rounded-xl bg-slate-900/60 backdrop-blur-md border border-white/20 shadow-md">✓ UF Health &amp; HCA Networks</span>
+            <span className="px-3.5 py-1.5 rounded-xl bg-slate-900/80 backdrop-blur-md border border-white/20 shadow-md">✓ Guaranteed Same-Day Sick Visits</span>
+            <span className="px-3.5 py-1.5 rounded-xl bg-slate-900/80 backdrop-blur-md border border-white/20 shadow-md">✓ On-Site Diagnostic Labs</span>
+            <span className="px-3.5 py-1.5 rounded-xl bg-slate-900/80 backdrop-blur-md border border-white/20 shadow-md">✓ UF Health &amp; HCA Networks</span>
           </div>
 
           {/* Single Clean Centered Button */}
@@ -301,8 +302,8 @@ function App() {
         </div>
       </section>
 
-      {/* ── Stats Bar (CENTERED) ──────────────────── */}
-      <section className="section-wrapper py-10 bg-slate-900/90 border-y border-slate-800 relative z-20">
+      {/* ── Stats Bar (DARK BLUE NAVY) ──────────────────── */}
+      <section className="section-wrapper py-10 bg-[#070e1f] border-y border-slate-800 relative z-20">
         <div className="site-container">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 justify-center items-center">
             {[
@@ -313,13 +314,13 @@ function App() {
             ].map((stat, i) => (
               <div
                 key={stat.label}
-                className="bg-white dark:bg-slate-800 rounded-2xl p-5 sm:p-6 text-center shadow-lg border border-slate-200/80 dark:border-slate-700/80 flex flex-col items-center justify-center"
+                className="bg-slate-900/90 rounded-2xl p-5 sm:p-6 text-center shadow-lg border border-slate-800 flex flex-col items-center justify-center"
               >
-                <div className="text-3xl sm:text-4xl font-black text-sky-600 dark:text-sky-400 flex items-center justify-center">
+                <div className="text-3xl sm:text-4xl font-black text-sky-400 flex items-center justify-center">
                   <CountUp to={stat.target} duration={1.5 + i * 0.2} />
                   <span>{stat.suffix}</span>
                 </div>
-                <div className="text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-300 mt-1.5 text-center">
+                <div className="text-xs sm:text-sm font-bold text-slate-300 mt-1.5 text-center">
                   {stat.label}
                 </div>
               </div>
@@ -328,28 +329,28 @@ function App() {
         </div>
       </section>
 
-      {/* ── Meet Our Physicians (LARGER PHOTOS & DESCRIPTIONS, PROPORTIONAL) ── */}
-      <section id="physicians" className="section-wrapper py-20 lg:py-28">
+      {/* ── Meet Our Physicians (DARK BLUE NAVY BACKGROUND + CENTERED) ── */}
+      <section id="physicians" className="section-wrapper py-20 lg:py-28 bg-slate-950 text-white">
         <div className="site-container">
           <div className="text-center max-w-3xl mx-auto mb-14">
-            <span className="text-xs font-bold uppercase tracking-wider text-sky-600 dark:text-sky-400 block mb-2 text-center">
+            <span className="text-xs font-bold uppercase tracking-wider text-sky-400 block mb-2 text-center">
               Medical Leadership
             </span>
-            <h2 className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white text-center">
+            <h2 className="text-3xl sm:text-4xl font-black text-white text-center">
               Meet Our Physicians
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-400 mt-2 text-center">
+            <p className="text-base sm:text-lg text-slate-300 mt-2 text-center">
               Dr. Nasir Ahmed and his son Dr. Ramin Ahmad provide trusted family healthcare under one roof.
             </p>
           </div>
 
-          {/* Symmetrical 2-card desktop layout with larger photos and description */}
+          {/* Symmetrical 2-card desktop layout with dark blue glass styling */}
           <div className="grid md:grid-cols-2 gap-7 lg:gap-8 items-stretch justify-center w-full">
             {physicians.map((doc) => (
               <SpotlightCard
                 key={doc.name}
                 spotlightColor={doc.spotlight}
-                className="bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 p-7 sm:p-9 shadow-lg flex flex-col justify-start"
+                className="bg-slate-900/90 rounded-3xl border border-slate-800 p-7 sm:p-9 shadow-xl flex flex-col justify-start"
               >
                 <div className="flex flex-col sm:flex-row sm:items-center gap-6 mb-6">
                   {/* Larger Doctor Photo */}
@@ -359,20 +360,20 @@ function App() {
                     className="w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 rounded-2xl object-cover border-2 border-sky-400/40 shadow-lg flex-shrink-0 mx-auto sm:mx-0"
                   />
                   <div className="text-center sm:text-left min-w-0">
-                    <span className="text-xs font-bold uppercase text-sky-600 dark:text-sky-400 tracking-wider block mb-1">
+                    <span className="text-xs font-bold uppercase text-sky-400 tracking-wider block mb-1">
                       {doc.role}
                     </span>
-                    <h3 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white leading-tight">
+                    <h3 className="text-2xl sm:text-3xl font-black text-white leading-tight">
                       {doc.name}
                     </h3>
-                    <p className="text-sm font-semibold text-slate-500 dark:text-slate-400 mt-1">{doc.title}</p>
+                    <p className="text-sm font-semibold text-slate-400 mt-1">{doc.title}</p>
                   </div>
                 </div>
 
                 {/* Larger, Clearer Bullet Points */}
                 <ul className="space-y-3 mt-2">
                   {doc.bullets.map((b) => (
-                    <li key={b} className="flex items-start gap-3 text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+                    <li key={b} className="flex items-start gap-3 text-sm sm:text-base text-slate-200 leading-relaxed">
                       <CheckIcon />
                       <span>{b}</span>
                     </li>
@@ -384,28 +385,28 @@ function App() {
         </div>
       </section>
 
-      {/* ── Our Core Services (ALL 4 CARDS WITH HIGH RESOLUTION IMAGES + SHINYTEXT ENHANCER) ── */}
-      <section id="services" className="section-wrapper py-20 lg:py-28 bg-white dark:bg-slate-800/40 border-y border-slate-200/80 dark:border-slate-800">
+      {/* ── Our Core Services (DEEP BLUE NAVY BACKGROUND + ALL 4 CARDS) ── */}
+      <section id="services" className="section-wrapper py-20 lg:py-28 bg-[#0a1224] border-y border-slate-800 text-white">
         <div className="site-container">
           <div className="text-center max-w-3xl mx-auto mb-14">
-            <span className="text-xs font-bold uppercase tracking-wider text-sky-600 dark:text-sky-400 block mb-2 text-center">
+            <span className="text-xs font-bold uppercase tracking-wider text-sky-400 block mb-2 text-center">
               Care For Every Age
             </span>
-            <h2 className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white text-center">
+            <h2 className="text-3xl sm:text-4xl font-black text-white text-center">
               Our Core Services
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-400 mt-2 text-center">
+            <p className="text-base sm:text-lg text-slate-300 mt-2 text-center">
               From newborn milestone checks to adult preventive physicals and chronic condition care.
             </p>
           </div>
 
-          {/* Symmetrical 4-Card Grid that fits 100% on PC screens without edge clipping */}
+          {/* Symmetrical 4-Card Grid in Dark Blue Theme */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 justify-center w-full">
             {services.map((svc) => (
               <SpotlightCard
                 key={svc.title}
                 spotlightColor={svc.spotlight}
-                className="group bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-md flex flex-col justify-between hover:shadow-xl transition-shadow"
+                className="group bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-lg flex flex-col justify-between hover:shadow-2xl transition-all"
               >
                 <div>
                   <div className="h-44 sm:h-48 overflow-hidden relative">
@@ -415,29 +416,29 @@ function App() {
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     {/* Frosted Glass Floating Badge */}
-                    <div className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-slate-950/70 backdrop-blur-md text-white text-[10px] font-bold tracking-wide border border-white/15 shadow-sm">
+                    <div className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-slate-950/80 backdrop-blur-md text-white text-[10px] font-bold tracking-wide border border-white/20 shadow-sm">
                       {svc.badge}
                     </div>
                   </div>
 
                   <div className="p-5 text-center sm:text-left">
                     <span className="inline-block text-[11px] font-bold uppercase tracking-wider mb-1">
-                      <ShinyText text={svc.subtitle} color="#0284c7" shineColor="#38bdf8" speed={2.5} />
+                      <ShinyText text={svc.subtitle} color="#38bdf8" shineColor="#ffffff" speed={2.5} />
                     </span>
-                    <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">
+                    <h3 className="text-lg font-bold text-white mb-2">
                       {svc.title}
                     </h3>
-                    <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                    <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
                       {svc.desc}
                     </p>
                   </div>
                 </div>
 
                 <div className="p-5 pt-0 flex items-center justify-between text-xs font-semibold">
-                  <span className="text-teal-600 dark:text-teal-400 font-bold">
+                  <span className="text-teal-400 font-bold">
                     {svc.highlight}
                   </span>
-                  <span className="text-slate-400 group-hover:text-sky-500 group-hover:translate-x-1 transition-all">
+                  <span className="text-slate-400 group-hover:text-sky-400 group-hover:translate-x-1 transition-all">
                     &rarr;
                   </span>
                 </div>
@@ -447,17 +448,17 @@ function App() {
         </div>
       </section>
 
-      {/* ── Patient Registration Forms (PDF) (PERFECTLY CENTERED WITH INLINE STYLES) ──────── */}
-      <section id="forms" className="section-wrapper py-20 lg:py-28">
+      {/* ── Patient Registration Forms (PDF) (DARK BLUE NAVY + CENTERED) ──────── */}
+      <section id="forms" className="section-wrapper py-20 lg:py-28 bg-slate-950 text-white">
         <div className="site-container flex flex-col items-center">
           <div className="text-center max-w-3xl mx-auto mb-14">
-            <span className="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 block mb-2 text-center">
+            <span className="text-xs font-bold uppercase tracking-wider text-emerald-400 block mb-2 text-center">
               Fast-Track Your Visit
             </span>
-            <h2 className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white text-center">
+            <h2 className="text-3xl sm:text-4xl font-black text-white text-center">
               Patient Registration Forms (PDF)
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-400 mt-2 text-center">
+            <p className="text-base text-slate-300 mt-2 text-center">
               Download and complete your official forms prior to arrival to save waiting room time.
             </p>
           </div>
@@ -469,18 +470,18 @@ function App() {
               style={{ marginLeft: 'auto', marginRight: 'auto' }}
             >
               {/* Child Registration */}
-              <div className="bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 p-7 sm:p-8 shadow-md flex flex-col justify-between">
+              <div className="bg-slate-900 border border-slate-800 rounded-3xl p-7 sm:p-8 shadow-xl flex flex-col justify-between">
                 <div>
-                  <div className="w-12 h-12 rounded-2xl bg-sky-100 dark:bg-sky-900/50 text-sky-600 dark:text-sky-400 flex items-center justify-center mb-4 text-xl font-bold">
+                  <div className="w-12 h-12 rounded-2xl bg-sky-900/50 text-sky-400 flex items-center justify-center mb-4 text-xl font-bold">
                     📄
                   </div>
-                  <span className="text-xs font-bold uppercase text-sky-600 dark:text-sky-400 tracking-wider">
+                  <span className="text-xs font-bold uppercase text-sky-400 tracking-wider">
                     Pediatrics (Ages 0–18)
                   </span>
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mt-1 mb-2">
+                  <h3 className="text-xl font-bold text-white mt-1 mb-2">
                     Child Registration Packet (PDF)
                   </h3>
-                  <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-7">
+                  <p className="text-sm text-slate-300 leading-relaxed mb-7">
                     Official intake form for newborns, children, and teens. Includes patient medical history, insurance release, and parental consent.
                   </p>
                 </div>
@@ -495,18 +496,18 @@ function App() {
               </div>
 
               {/* Adult Registration */}
-              <div className="bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 p-7 sm:p-8 shadow-md flex flex-col justify-between">
+              <div className="bg-slate-900 border border-slate-800 rounded-3xl p-7 sm:p-8 shadow-xl flex flex-col justify-between">
                 <div>
-                  <div className="w-12 h-12 rounded-2xl bg-teal-100 dark:bg-teal-900/50 text-teal-600 dark:text-teal-400 flex items-center justify-center mb-4 text-xl font-bold">
+                  <div className="w-12 h-12 rounded-2xl bg-teal-900/50 text-teal-400 flex items-center justify-center mb-4 text-xl font-bold">
                     📋
                   </div>
-                  <span className="text-xs font-bold uppercase text-teal-600 dark:text-teal-400 tracking-wider">
+                  <span className="text-xs font-bold uppercase text-teal-400 tracking-wider">
                     Adult Primary Care
                   </span>
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mt-1 mb-2">
+                  <h3 className="text-xl font-bold text-white mt-1 mb-2">
                     Adult New Patient Form (PDF)
                   </h3>
-                  <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-7">
+                  <p className="text-sm text-slate-300 leading-relaxed mb-7">
                     Official adult intake form for Dr. Ramin Ahmad, M.D. Covers health history, cardiovascular care, and medication review.
                   </p>
                 </div>
@@ -524,22 +525,22 @@ function App() {
         </div>
       </section>
 
-      {/* ── Insurance & Clinic Exterior ───────────── */}
-      <section id="insurance" className="section-wrapper py-20 lg:py-28 bg-white dark:bg-slate-800/40 border-y border-slate-200/80 dark:border-slate-800">
+      {/* ── Insurance & Clinic Exterior (DEEP BLUE NAVY) ───────────── */}
+      <section id="insurance" className="section-wrapper py-20 lg:py-28 bg-[#0a1224] border-y border-slate-800 text-white">
         <div className="site-container">
           <div className="grid lg:grid-cols-2 gap-12 items-center justify-center w-full">
             <div>
-              <span className="text-xs font-bold uppercase tracking-wider text-sky-600 dark:text-sky-400 block mb-2">
+              <span className="text-xs font-bold uppercase tracking-wider text-sky-400 block mb-2">
                 Insurance &amp; Coverage
               </span>
-              <h2 className="text-3xl font-black text-slate-900 dark:text-white mb-4">
+              <h2 className="text-3xl font-black text-white mb-4">
                 Accepted Insurance Plans
               </h2>
-              <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed mb-8">
+              <p className="text-base text-slate-300 leading-relaxed mb-8">
                 We accept most major commercial insurance carriers, Medicare for adult primary care, and Florida Medicaid.
               </p>
 
-              <div className="grid grid-cols-2 gap-3 text-sm font-semibold text-slate-700 dark:text-slate-200">
+              <div className="grid grid-cols-2 gap-3 text-sm font-semibold text-slate-200">
                 <span className="flex items-center gap-2"><CheckIcon /> Florida Blue</span>
                 <span className="flex items-center gap-2"><CheckIcon /> Medicare</span>
                 <span className="flex items-center gap-2"><CheckIcon /> Florida Medicaid</span>
@@ -568,7 +569,7 @@ function App() {
         </div>
       </section>
 
-      {/* ── Contact & Location ────────────────────── */}
+      {/* ── Contact & Location (DARK BLUE NAVY) ────────────────────── */}
       <section id="contact" className="section-wrapper py-24 lg:py-32 bg-slate-950 text-white">
         <div className="site-container">
           <div className="grid lg:grid-cols-2 gap-12 items-start justify-center w-full">
@@ -706,7 +707,7 @@ function App() {
         </div>
       </section>
 
-      {/* ── Clean Footer ─────────────────────────── */}
+      {/* ── Clean Footer (DARK BLUE NAVY) ─────────────────────────── */}
       <footer className="section-wrapper bg-slate-950 text-slate-400 py-12 border-t border-slate-800 text-xs mt-auto">
         <div className="site-container flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
           <div>
