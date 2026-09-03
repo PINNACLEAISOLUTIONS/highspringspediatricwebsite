@@ -137,21 +137,21 @@ function App() {
 
   return (
     <div className="min-h-screen bg-[#070e1f] text-slate-100 antialiased overflow-x-hidden flex flex-col w-full pb-16 md:pb-0 font-sans">
-      {/* ── Top Utility Bar ────────────────────────── */}
+      {/* ── Top Utility Bar (NO DUPLICATE PHONE NUMBER) ────────────── */}
       <div className="bg-[#03060f] text-slate-300 text-xs py-2 px-3 sm:px-4 border-b border-slate-800/80 w-full">
         <div className="site-container flex flex-col sm:flex-row items-center justify-between gap-1.5 sm:gap-2">
           <div className="flex items-center gap-3 sm:gap-4 flex-wrap justify-center text-[11px] sm:text-xs">
-            <a href={CLINIC.phoneTel} className="text-sky-400 hover:text-sky-300 font-bold flex items-center gap-1.5 whitespace-nowrap">
-              <PhoneIcon /> {CLINIC.phone}
-            </a>
-            <span className="text-slate-600">•</span>
-            <span className="flex items-center gap-1.5 whitespace-nowrap text-slate-400">
+            <span className="flex items-center gap-1.5 whitespace-nowrap text-slate-300 font-medium">
               <ClockIcon /> {CLINIC.hours}
             </span>
-          </div>
-          <div className="hidden sm:flex items-center gap-4 text-[11px] sm:text-xs">
-            <span className="text-rose-400 font-bold">
+            <span className="text-slate-600 hidden sm:inline">•</span>
+            <span className="text-rose-400 font-bold hidden sm:inline">
               • For emergencies: Call 911
+            </span>
+          </div>
+          <div className="flex items-center gap-4 text-[11px] sm:text-xs">
+            <span className="text-rose-400 font-bold sm:hidden">
+              • Emergency: Call 911
             </span>
             <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-semibold whitespace-nowrap">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
@@ -161,26 +161,32 @@ function App() {
         </div>
       </div>
 
-      {/* ── Main Navigation (HIGH-TECH MODERN DROPDOWN ON DESKTOP & MOBILE) ───── */}
+      {/* ── Main Navigation (CUSTOM EMBLEM LOGO, BIGGER DESKTOP FONT, CLEAN HEADER) ───── */}
       <nav className="sticky top-0 z-50 bg-[#070e1f]/95 backdrop-blur-md border-b border-slate-800/80 shadow-2xl w-full">
-        <div className="site-container h-16 sm:h-20 flex items-center justify-between gap-2 sm:gap-4 px-3 sm:px-6">
-          {/* Logo & Hot Title */}
-          <a href="#home" className="flex items-center gap-2.5 sm:gap-3 min-w-0">
-            <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-gradient-to-tr from-sky-500 via-teal-500 to-emerald-400 text-white font-black text-base sm:text-lg flex items-center justify-center shadow-lg shadow-sky-500/30 flex-shrink-0">
-              HS
-            </div>
-            <div className="flex flex-col justify-center min-w-0">
-              <div className="font-black text-sm sm:text-base md:text-lg tracking-tight leading-tight text-white whitespace-nowrap">
-                High Springs <span className="bg-gradient-to-r from-sky-400 to-teal-400 bg-clip-text text-transparent">Pediatrics</span>
+        <div className="site-container h-20 sm:h-24 flex items-center justify-between gap-3 sm:gap-6 px-3 sm:px-6">
+          {/* Custom Brand Emblem & Bigger Typography */}
+          <a href="#home" className="flex items-center gap-3 sm:gap-3.5 min-w-0 group">
+            <div className="w-11 h-11 sm:w-13 sm:h-13 rounded-2xl bg-gradient-to-tr from-sky-500 via-teal-500 to-emerald-400 p-0.5 shadow-xl shadow-sky-500/30 flex-shrink-0 flex items-center justify-center group-hover:scale-105 transition-transform">
+              <div className="w-full h-full bg-[#050b18] rounded-[14px] flex items-center justify-center text-sky-400 relative overflow-hidden">
+                <svg className="w-6 h-6 sm:w-7 sm:h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M12 5v14M5 12h14" className="stroke-sky-400" />
+                  <circle cx="12" cy="12" r="9" className="stroke-teal-400/50" strokeWidth="1.5" />
+                </svg>
               </div>
-              <div className="text-[10px] sm:text-xs font-bold text-slate-300 tracking-wide uppercase whitespace-nowrap">
+            </div>
+
+            <div className="flex flex-col justify-center min-w-0">
+              <div className="font-black text-lg sm:text-2xl lg:text-3xl tracking-tight leading-tight text-white whitespace-nowrap group-hover:text-sky-100 transition-colors">
+                High Springs <span className="text-sky-400">Pediatrics</span>
+              </div>
+              <div className="text-[11px] sm:text-xs md:text-sm font-bold bg-gradient-to-r from-teal-300 to-sky-300 bg-clip-text text-transparent tracking-wider uppercase whitespace-nowrap">
                 &amp; Adult Primary Care
               </div>
             </div>
           </a>
 
           {/* Desktop High-Tech Modern Navigation & Dropdown */}
-          <div className="hidden lg:flex items-center gap-4 text-sm font-semibold">
+          <div className="hidden lg:flex items-center gap-5 text-sm font-semibold">
             <a href="#home" className="px-3 py-2 text-slate-300 hover:text-white transition-colors">
               Home
             </a>
@@ -190,7 +196,7 @@ function App() {
               <button
                 onClick={() => setDesktopDropdownOpen(!desktopDropdownOpen)}
                 onMouseEnter={() => setDesktopDropdownOpen(true)}
-                className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-900/80 border border-slate-700/80 text-slate-200 hover:text-sky-300 hover:border-sky-400/50 transition-all shadow-sm"
+                className="flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-slate-900/90 border border-slate-700/80 text-slate-200 hover:text-sky-300 hover:border-sky-400/50 transition-all shadow-sm"
               >
                 <span>Browse Menu</span>
                 <ChevronDownIcon />
@@ -204,14 +210,14 @@ function App() {
                     exit={{ opacity: 0, y: 10, scale: 0.96 }}
                     transition={{ duration: 0.18 }}
                     onMouseLeave={() => setDesktopDropdownOpen(false)}
-                    className="absolute top-full left-0 mt-2 w-72 rounded-2xl bg-slate-950/95 backdrop-blur-xl border border-sky-500/30 p-2 shadow-2xl z-50"
+                    className="absolute top-full left-0 mt-2 w-72 rounded-2xl bg-slate-950/98 backdrop-blur-xl border border-sky-500/30 p-2 shadow-2xl z-50"
                   >
                     {navLinks.slice(1).map((item) => (
                       <a
                         key={item.label}
                         href={item.href}
                         onClick={() => setDesktopDropdownOpen(false)}
-                        className="flex flex-col p-2.5 rounded-xl hover:bg-sky-600/15 transition-all group"
+                        className="flex flex-col p-2.5 rounded-xl hover:bg-sky-600/20 transition-all group"
                       >
                         <span className="text-sm font-bold text-white group-hover:text-sky-400">
                           {item.label}
@@ -234,21 +240,21 @@ function App() {
             </a>
           </div>
 
-          {/* Nav Right Action Buttons */}
+          {/* Nav Right: Single Phone Button on Desktop, + Hamburger Menu ONLY on Mobile */}
           <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
             <a
               href={CLINIC.phoneTel}
-              className="inline-flex items-center gap-1.5 px-3.5 py-2 sm:px-5 sm:py-2.5 rounded-full bg-gradient-to-r from-sky-600 via-teal-600 to-emerald-600 hover:from-sky-500 hover:to-emerald-500 text-white text-xs sm:text-sm font-extrabold shadow-lg shadow-sky-500/20 whitespace-nowrap active:scale-95 transition-all"
+              className="inline-flex items-center gap-2 px-4 py-2 sm:px-6 sm:py-3 rounded-full bg-gradient-to-r from-sky-600 via-teal-600 to-emerald-600 hover:from-sky-500 hover:to-emerald-500 text-white text-xs sm:text-sm font-extrabold shadow-lg shadow-sky-500/25 whitespace-nowrap active:scale-95 transition-all"
             >
               <PhoneIcon />
               <span className="hidden sm:inline">{CLINIC.phone}</span>
               <span className="sm:hidden text-xs">Call</span>
             </a>
 
-            {/* Modern Dropdown Toggle Button for Mobile / Tablet */}
+            {/* Mobile / Tablet Only Hamburger Button (HIDDEN on desktop) */}
             <button
               onClick={() => setNavMenuOpen(!navMenuOpen)}
-              className="p-2.5 rounded-xl text-slate-200 hover:text-white bg-slate-800/90 border border-sky-500/30 shadow-md active:scale-95 transition-all flex items-center gap-1"
+              className="lg:hidden p-2.5 rounded-xl text-slate-200 hover:text-white bg-slate-800/90 border border-sky-500/30 shadow-md active:scale-95 transition-all flex items-center gap-1"
               aria-label="Toggle Navigation Menu"
             >
               {navMenuOpen ? <CloseIcon /> : <MenuIcon />}
