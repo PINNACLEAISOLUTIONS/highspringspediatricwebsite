@@ -29,7 +29,7 @@ body {
   box-sizing: border-box !important;
 }
 
-/* 3D Pop & Card Elevation Effects from React Bits */
+/* 3D Pop & Card Elevation Effects */
 .card-3d-box {
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease !important;
   will-change: transform, box-shadow;
@@ -53,4 +53,40 @@ body {
 
 .card-3d-box:hover .zoom-img {
   transform: scale(1.08) !important;
+}
+
+/* ── Floating Light Bubbles across Clinic Photo ── */
+.bubble-container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 15;
+}
+
+.light-bubble {
+  position: absolute;
+  bottom: -40px;
+  background: radial-gradient(circle at 35% 35%, rgba(255, 255, 255, 0.85), rgba(186, 230, 253, 0.5) 45%, rgba(56, 189, 248, 0.2) 75%, transparent 100%);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 50%;
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.5), inset 0 0 6px rgba(255, 255, 255, 0.8);
+  animation: floatBubbleUp linear infinite;
+}
+
+@keyframes floatBubbleUp {
+  0% {
+    transform: translateY(0) translateX(0) scale(0.7);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.75;
+  }
+  85% {
+    opacity: 0.75;
+  }
+  100% {
+    transform: translateY(-400px) translateX(30px) scale(1.15);
+    opacity: 0;
+  }
 }
