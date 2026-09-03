@@ -121,7 +121,6 @@ function App() {
   const [desktopDropdownOpen, setDesktopDropdownOpen] = useState(false)
   const [submitted, setSubmitted] = useState(false)
 
-  // Strictly enforce dark navy theme on root
   useEffect(() => {
     document.documentElement.classList.add('dark')
     document.body.style.backgroundColor = '#070e1f'
@@ -132,7 +131,7 @@ function App() {
     { label: 'Physicians', href: '#physicians', desc: 'Dr. Nasir Ahmed & Dr. Ramin Ahmad' },
     { label: 'Services', href: '#services', desc: 'Pediatrics, Adult Care & Labs' },
     { label: 'Patient Forms', href: '#forms', desc: 'Official Intake Forms (PDF)' },
-    { label: 'Insurance', href: '#insurance', desc: 'Accepted Plans & In-Network Coverage' },
+    { label: 'Insurance', href: '#insurance', desc: 'Accepted Plans & Direct Billing' },
     { label: 'Contact', href: '#contact', desc: 'Phone, Hours & Online Request' },
   ]
 
@@ -346,12 +345,12 @@ function App() {
             Led by founding pediatrician <strong>Dr. Nasir Ahmed, M.D.</strong> and internal medicine physician <strong>Dr. Ramin Ahmad, M.D.</strong> Dedicated family healthcare in High Springs.
           </motion.p>
 
-          {/* Prominent Building Showcase Box */}
+          {/* Prominent Building Showcase Box with 3D Pop */}
           <motion.div
             initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.25 }}
-            className="w-full max-w-[1200px] rounded-2xl sm:rounded-3xl overflow-hidden border-2 border-sky-500/40 shadow-2xl mb-7 relative group card-pop-box"
+            className="w-full max-w-[1200px] rounded-2xl sm:rounded-3xl overflow-hidden border-2 border-sky-500/40 shadow-2xl mb-7 relative group card-3d-box"
           >
             <div className="h-52 sm:h-72 md:h-80 w-full relative overflow-hidden">
               <img
@@ -397,7 +396,7 @@ function App() {
         </div>
       </section>
 
-      {/* ── Stats Bar (STRAIGHT ALIGNED POPPING BOXES) ──────────────── */}
+      {/* ── Stats Bar (STRAIGHT ALIGNED 3D POPPING BOXES) ──────────────── */}
       <section className="section-wrapper py-8 sm:py-10 bg-[#040814] border-y border-slate-800/80 relative z-20">
         <div className="site-container">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-6 justify-center items-stretch max-w-[1200px] mx-auto" style={{ marginLeft: 'auto', marginRight: 'auto' }}>
@@ -413,7 +412,7 @@ function App() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.1 }}
-                className="bg-slate-900/90 rounded-2xl p-4 sm:p-6 text-center shadow-lg border border-slate-800 flex flex-col items-center justify-center h-full card-pop-box"
+                className="bg-slate-900/90 rounded-2xl p-4 sm:p-6 text-center shadow-lg border border-slate-800 flex flex-col items-center justify-center h-full card-3d-box"
               >
                 <div className="text-2xl sm:text-4xl font-black text-sky-400 flex items-center justify-center">
                   <CountUp to={stat.target} duration={1.5 + i * 0.2} />
@@ -428,26 +427,26 @@ function App() {
         </div>
       </section>
 
-      {/* ── Meet Our Physicians (NO RAW HIGHLIGHTS, 1-COL ON MOBILE, PERFECTLY CENTERED) ── */}
-      <section id="physicians" className="section-wrapper py-16 sm:py-24 lg:py-28 bg-[#070e1f] text-white">
+      {/* ── Meet Our Physicians (BLUE TITLE, NO RAW HIGHLIGHTS, 1-COL ON MOBILE, PERFECTLY CENTERED) ── */}
+      <section id="physicians" className="section-wrapper py-16 sm:py-24 lg:py-28 bg-[#070e1f] text-white w-full">
         <div className="site-container flex flex-col items-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="text-center max-w-3xl mx-auto mb-10 sm:mb-14"
+            className="text-center max-w-2xl mx-auto mb-10 sm:mb-14"
           >
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-center">
-              <span className="text-white">Meet Our </span>
-              <span className="bg-gradient-to-r from-sky-400 to-teal-400 bg-clip-text text-transparent">Physicians</span>
+            {/* VIBRANT BLUE TITLE */}
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-center text-sky-400 mb-2">
+              Meet Our Physicians
             </h2>
-            <p className="text-xs sm:text-base text-slate-300 mt-2.5 text-center max-w-xl mx-auto">
+            <p className="text-xs sm:text-base text-slate-300 text-center max-w-xl mx-auto">
               Dr. Nasir Ahmed and his son Dr. Ramin Ahmad provide compassionate family healthcare under one roof.
             </p>
           </motion.div>
 
-          {/* Symmetrical Grid: 1-Column Staked on Mobile (Centered), 2-Column on Desktop */}
+          {/* Symmetrical Grid: 1-Column on Mobile (Centered), 2-Column on Desktop */}
           <div
             className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 items-stretch w-full max-w-[1200px]"
             style={{ marginLeft: 'auto', marginRight: 'auto' }}
@@ -463,7 +462,7 @@ function App() {
               >
                 <SpotlightCard
                   spotlightColor={doc.spotlight}
-                  className="w-full bg-[#0a1224] rounded-3xl border border-slate-800 p-6 sm:p-8 md:p-9 shadow-2xl flex flex-col justify-between h-full card-pop-box"
+                  className="w-full bg-[#0a1224] rounded-3xl border border-slate-800 p-6 sm:p-8 md:p-9 shadow-2xl flex flex-col justify-between h-full card-3d-box"
                 >
                   <div>
                     {/* Doctor Profile Header with Centered Portrait on Mobile */}
@@ -508,26 +507,26 @@ function App() {
         </div>
       </section>
 
-      {/* ── Our Core Services (NO RAW HIGHLIGHTS, NO BOTTOM-LEFT BADGES, STRAIGHT EQUAL-HEIGHT) ── */}
-      <section id="services" className="section-wrapper py-16 sm:py-24 lg:py-28 bg-[#0a1224] border-y border-slate-800/80 text-white">
-        <div className="site-container">
+      {/* ── Our Core Services (BLUE TITLE, NO BOTTOM-LEFT WORDS, 3D POPPING CARDS) ── */}
+      <section id="services" className="section-wrapper py-16 sm:py-24 lg:py-28 bg-[#0a1224] border-y border-slate-800/80 text-white w-full">
+        <div className="site-container flex flex-col items-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="text-center max-w-3xl mx-auto mb-10 sm:mb-14"
+            className="text-center max-w-2xl mx-auto mb-10 sm:mb-14"
           >
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-center">
-              <span className="text-white">Our Core </span>
-              <span className="bg-gradient-to-r from-sky-400 to-teal-400 bg-clip-text text-transparent">Services</span>
+            {/* VIBRANT BLUE TITLE */}
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-center text-sky-400 mb-2">
+              Our Core Services
             </h2>
-            <p className="text-xs sm:text-base text-slate-300 mt-2.5 text-center max-w-xl mx-auto">
-              From newborn milestone checks to adult preventive physicals and chronic condition care.
+            <p className="text-xs sm:text-base text-slate-300 text-center max-w-xl mx-auto">
+              From newborn milestone checkups to adult wellness physicals and chronic condition care.
             </p>
           </motion.div>
 
-          {/* Symmetrical 4-Card Grid (1200px Width - Straight Equal Height) */}
+          {/* Symmetrical 4-Card Grid (1200px Width - 3D Equal Height) */}
           <div
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 items-stretch justify-center w-full max-w-[1200px]"
             style={{ marginLeft: 'auto', marginRight: 'auto' }}
@@ -543,7 +542,7 @@ function App() {
               >
                 <SpotlightCard
                   spotlightColor={svc.spotlight}
-                  className="w-full group bg-[#070e1f] border border-slate-800 rounded-2xl overflow-hidden shadow-lg flex flex-col justify-between h-full card-pop-box"
+                  className="w-full group bg-[#070e1f] border border-slate-800 rounded-2xl overflow-hidden shadow-lg flex flex-col justify-between h-full card-3d-box"
                 >
                   <div>
                     {/* Fixed Height Image with Smooth Zoom */}
@@ -589,21 +588,21 @@ function App() {
         </div>
       </section>
 
-      {/* ── Patient Registration Forms (PDF) (NO RAW HIGHLIGHTS, 1200PX STRAIGHT CARDS) ── */}
-      <section id="forms" className="section-wrapper py-16 sm:py-24 lg:py-28 bg-[#070e1f] text-white">
+      {/* ── Patient Registration Forms (PDF) (BLUE TITLE, 1200PX STRAIGHT CARDS) ── */}
+      <section id="forms" className="section-wrapper py-16 sm:py-24 lg:py-28 bg-[#070e1f] text-white w-full">
         <div className="site-container flex flex-col items-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="text-center max-w-3xl mx-auto mb-10 sm:mb-14"
+            className="text-center max-w-2xl mx-auto mb-10 sm:mb-14"
           >
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-center">
-              <span className="text-white">Patient Registration </span>
-              <span className="bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">Forms (PDF)</span>
+            {/* VIBRANT BLUE TITLE */}
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-center text-sky-400 mb-2">
+              Patient Registration Forms (PDF)
             </h2>
-            <p className="text-xs sm:text-base text-slate-300 mt-2.5 text-center max-w-xl mx-auto">
+            <p className="text-xs sm:text-base text-slate-300 text-center max-w-xl mx-auto">
               Download and complete your official forms prior to arrival to save waiting room time.
             </p>
           </motion.div>
@@ -619,7 +618,7 @@ function App() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="bg-[#0a1224] border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-xl flex flex-col justify-between h-full card-pop-box"
+              className="bg-[#0a1224] border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-xl flex flex-col justify-between h-full card-3d-box"
             >
               <div>
                 <div className="w-12 h-12 rounded-2xl bg-sky-900/50 text-sky-400 flex items-center justify-center mb-4 text-xl font-bold">
@@ -651,7 +650,7 @@ function App() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="bg-[#0a1224] border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-xl flex flex-col justify-between h-full card-pop-box"
+              className="bg-[#0a1224] border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-xl flex flex-col justify-between h-full card-3d-box"
             >
               <div>
                 <div className="w-12 h-12 rounded-2xl bg-teal-900/50 text-teal-400 flex items-center justify-center mb-4 text-xl font-bold">
@@ -680,8 +679,8 @@ function App() {
         </div>
       </section>
 
-      {/* ── Accepted Insurance Plans (STANDOUT HIGH-TECH CARD) ── */}
-      <section id="insurance" className="section-wrapper py-16 sm:py-24 lg:py-28 bg-[#060d1d] border-y border-slate-800/80 text-white">
+      {/* ── Accepted Insurance Plans (BLUE TITLE, STANDOUT HIGH-TECH CARD) ── */}
+      <section id="insurance" className="section-wrapper py-16 sm:py-24 lg:py-28 bg-[#060d1d] border-y border-slate-800/80 text-white w-full">
         <div className="site-container">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-10 items-stretch justify-center w-full max-w-[1200px] mx-auto" style={{ marginLeft: 'auto', marginRight: 'auto' }}>
             {/* Standout High-Tech Accepted Insurance Plans Card */}
@@ -690,11 +689,12 @@ function App() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="bg-gradient-to-br from-slate-900/95 via-sky-950/30 to-teal-950/20 border-2 border-sky-400/50 rounded-3xl p-6 sm:p-8 shadow-[0_0_35px_-5px_rgba(14,165,233,0.3)] flex flex-col justify-between h-full card-pop-box"
+              className="bg-gradient-to-br from-slate-900/95 via-sky-950/30 to-teal-950/20 border-2 border-sky-400/50 rounded-3xl p-6 sm:p-8 shadow-[0_0_35px_-5px_rgba(14,165,233,0.3)] flex flex-col justify-between h-full card-3d-box"
             >
               <div>
                 <div className="flex items-center justify-between gap-3 mb-3 flex-wrap">
-                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight">
+                  {/* VIBRANT BLUE TITLE */}
+                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-sky-400 tracking-tight">
                     Accepted Insurance Plans
                   </h2>
                   <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 text-xs font-bold tracking-wide">
@@ -748,7 +748,7 @@ function App() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.15 }}
-              className="rounded-3xl overflow-hidden border border-slate-800 shadow-xl bg-slate-900/90 p-6 sm:p-8 flex flex-col justify-between h-full card-pop-box"
+              className="rounded-3xl overflow-hidden border border-slate-800 shadow-xl bg-slate-900/90 p-6 sm:p-8 flex flex-col justify-between h-full card-3d-box"
             >
               <div>
                 <div className="flex items-center justify-between mb-3">
@@ -782,14 +782,14 @@ function App() {
         </div>
       </section>
 
-      {/* ── Contact & Location (NO BLUE HIGHLIGHT, ENLARGED APPOINTMENT BOX) ── */}
-      <section id="contact" className="section-wrapper py-16 sm:py-24 lg:py-32 bg-[#070e1f] text-white">
+      {/* ── Contact & Location (BLUE TITLE, 2 DOCTOR OPTIONS, BACKUP SENT CONFIRMATION) ── */}
+      <section id="contact" className="section-wrapper py-16 sm:py-24 lg:py-32 bg-[#070e1f] text-white w-full">
         <div className="site-container">
           <div className="grid lg:grid-cols-2 gap-10 items-start justify-center w-full max-w-[1200px] mx-auto" style={{ marginLeft: 'auto', marginRight: 'auto' }}>
             <div>
-              <h2 className="text-3xl sm:text-4xl font-black mb-4 sm:mb-6">
-                <span className="text-white">Visit or Call </span>
-                <span className="bg-gradient-to-r from-sky-400 to-teal-400 bg-clip-text text-transparent">Our Clinic</span>
+              {/* VIBRANT BLUE TITLE */}
+              <h2 className="text-3xl sm:text-4xl font-black mb-4 sm:mb-6 text-sky-400">
+                Visit or Call Our Clinic
               </h2>
               <p className="text-xs sm:text-base text-slate-300 mb-6 leading-relaxed">
                 Contact our friendly medical reception desk for appointments, questions, and records.
@@ -823,8 +823,8 @@ function App() {
               </div>
             </div>
 
-            {/* Enlaraged Request an Appointment Box with Perfectly Fitting Dropdown */}
-            <div className="bg-[#0a1224] border border-slate-800 rounded-3xl p-7 sm:p-10 lg:p-12 shadow-2xl card-pop-box w-full">
+            {/* Enlarged Request an Appointment Box with ONLY 2 Doctors & Backup Confirmation */}
+            <div className="bg-[#0a1224] border border-slate-800 rounded-3xl p-7 sm:p-10 lg:p-12 shadow-2xl card-3d-box w-full">
               <h3 className="text-2xl sm:text-3xl font-black mb-2 text-white">Request an Appointment</h3>
               <p className="text-xs sm:text-sm text-slate-400 mb-6">
                 Or call directly at <a href={CLINIC.phoneTel} className="text-sky-400 font-bold underline">{CLINIC.phone}</a> for immediate same-day scheduling.
@@ -832,8 +832,12 @@ function App() {
 
               {submitted ? (
                 <div className="bg-emerald-950/60 border border-emerald-800 rounded-2xl p-8 text-center">
-                  <p className="text-lg sm:text-xl font-bold text-emerald-200">Appointment Request Sent</p>
-                  <p className="text-xs sm:text-sm text-emerald-300 mt-2">Our scheduling desk will contact you shortly.</p>
+                  <p className="text-lg sm:text-xl font-bold text-emerald-200">
+                    Your appointment request was sent to our office as a backup.
+                  </p>
+                  <p className="text-xs sm:text-sm text-emerald-300 mt-2">
+                    Our staff will call you shortly to confirm your time.
+                  </p>
                   <button
                     onClick={() => setSubmitted(false)}
                     className="mt-5 px-5 py-2.5 rounded-xl bg-emerald-600 text-xs font-bold text-white hover:bg-emerald-500"
@@ -875,17 +879,14 @@ function App() {
 
                   <div>
                     <label className="block text-xs font-bold text-slate-300 mb-1.5 uppercase tracking-wider">
-                      Physician / Service *
+                      Select Physician / Service *
                     </label>
                     <div className="relative">
                       <select
                         className="w-full px-4 py-3 sm:py-3.5 rounded-2xl border border-slate-700 bg-slate-900 text-white text-xs sm:text-sm md:text-base font-medium outline-none focus:border-sky-400 focus:ring-2 focus:ring-sky-500/20 transition-all appearance-none cursor-pointer pr-10"
                       >
-                        <option>Dr. Nasir Ahmed, MD (Pediatrics Ages 0–18)</option>
-                        <option>Dr. Ramin Ahmad, MD (Adult Primary Care)</option>
-                        <option>Guaranteed Same-Day Sick Visit</option>
-                        <option>Immunizations &amp; Physicals</option>
-                        <option>On-Site Diagnostic Labs</option>
+                        <option>Dr. Nasir Ahmed, M.D. (Pediatrics Ages 0–18)</option>
+                        <option>Dr. Ramin Ahmad, M.D. (Adult Primary Care)</option>
                       </select>
                       <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-slate-400">
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7" /></svg>
