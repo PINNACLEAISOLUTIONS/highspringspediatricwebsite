@@ -161,11 +161,11 @@ function App() {
         </div>
       </div>
 
-      {/* ── Main Navigation (PUNCHY BRANDING NEVER CUTS OFF) ───── */}
+      {/* ── Main Navigation (MOBILE-OPTIMIZED WITH NO TEXT CUTOFF) ───── */}
       <nav className="sticky top-0 z-50 bg-[#070e1f]/95 backdrop-blur-md border-b border-slate-800/80 shadow-2xl w-full">
         <div className="site-container h-16 sm:h-20 flex items-center justify-between gap-2 sm:gap-4 px-3 sm:px-6">
           {/* Logo & Clinic Name */}
-          <a href="#home" className="flex items-center gap-2 sm:gap-3 min-w-0 flex-1 sm:flex-initial">
+          <a href="#home" className="flex items-center gap-2.5 sm:gap-3 min-w-0 flex-1 sm:flex-initial">
             <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br from-sky-500 to-teal-500 text-white font-black text-sm sm:text-lg flex items-center justify-center shadow-lg shadow-sky-500/20 flex-shrink-0">
               HS
             </div>
@@ -257,7 +257,7 @@ function App() {
         </AnimatePresence>
       </nav>
 
-      {/* ── Hero Section (PROMINENT CLINIC PICTURE + BALANCED HEADLINE) ── */}
+      {/* ── Hero Section (CLEAR VISIBLE CLINIC PICTURE + BALANCED HEADLINE) ── */}
       <section id="home" className="section-wrapper relative bg-[#070e1f] text-white py-12 sm:py-20 lg:py-28 overflow-hidden">
         <div className="absolute inset-0 z-0 pointer-events-none opacity-40">
           <Particles
@@ -297,12 +297,12 @@ function App() {
             Trusted family healthcare led by founding pediatrician <strong>Dr. Nasir Ahmed, M.D.</strong> and internal medicine physician <strong>Dr. Ramin Ahmad, M.D.</strong>
           </motion.p>
 
-          {/* Prominent Building Showcase Box with Card Pop & Zoom */}
+          {/* Prominent Building Showcase Box */}
           <motion.div
             initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.25 }}
-            className="w-full max-w-3xl rounded-2xl sm:rounded-3xl overflow-hidden border-2 border-sky-500/40 shadow-2xl mb-7 relative group card-pop-box"
+            className="w-full max-w-[1200px] rounded-2xl sm:rounded-3xl overflow-hidden border-2 border-sky-500/40 shadow-2xl mb-7 relative group card-pop-box"
           >
             <div className="h-52 sm:h-72 md:h-80 w-full relative overflow-hidden">
               <img
@@ -351,7 +351,7 @@ function App() {
       {/* ── Stats Bar (STRAIGHT ALIGNED POPPING BOXES) ──────────────── */}
       <section className="section-wrapper py-8 sm:py-10 bg-[#040814] border-y border-slate-800/80 relative z-20">
         <div className="site-container">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-6 justify-center items-stretch">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-6 justify-center items-stretch max-w-[1200px] mx-auto" style={{ marginLeft: 'auto', marginRight: 'auto' }}>
             {[
               { target: 20, suffix: '+', label: 'Years in High Springs' },
               { target: 5.0, suffix: ' ★', label: 'Patient Rating' },
@@ -379,7 +379,7 @@ function App() {
         </div>
       </section>
 
-      {/* ── Meet Our Physicians (STRAIGHT EQUAL-HEIGHT CARDS + BIG DOCTOR PHOTOS + POPPING) ── */}
+      {/* ── Meet Our Physicians (UNIFIED 1200PX WIDTH - EXACT SAME AS SERVICES & FORMS) ── */}
       <section id="physicians" className="section-wrapper py-16 sm:py-24 lg:py-28 bg-[#070e1f] text-white">
         <div className="site-container flex flex-col items-center">
           <motion.div
@@ -400,9 +400,9 @@ function App() {
             </p>
           </motion.div>
 
-          {/* Symmetrical 2-Card Grid (EQUAL HEIGHT & CENTERED) */}
+          {/* Symmetrical 2-Card Grid (1200px Width - Exactly Symmetrical) */}
           <div
-            className="grid md:grid-cols-2 gap-6 lg:gap-8 items-stretch w-full max-w-[1160px]"
+            className="grid md:grid-cols-2 gap-6 lg:gap-8 items-stretch w-full max-w-[1200px]"
             style={{ marginLeft: 'auto', marginRight: 'auto' }}
           >
             {physicians.map((doc, idx) => (
@@ -459,7 +459,7 @@ function App() {
         </div>
       </section>
 
-      {/* ── Our Core Services (STRAIGHT EQUAL-HEIGHT BOXES, POPPING, HOVER ZOOM, NO CUTOFF) ── */}
+      {/* ── Our Core Services (UNIFIED 1200PX WIDTH - EXACT SAME AS PHYSICIANS & FORMS) ── */}
       <section id="services" className="section-wrapper py-16 sm:py-24 lg:py-28 bg-[#0a1224] border-y border-slate-800/80 text-white">
         <div className="site-container">
           <motion.div
@@ -480,8 +480,11 @@ function App() {
             </p>
           </motion.div>
 
-          {/* Symmetrical 4-Card Grid (All boxes have 100% equal height and straight borders) */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 items-stretch justify-center w-full">
+          {/* Symmetrical 4-Card Grid (1200px Width - Exactly Symmetrical) */}
+          <div
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 items-stretch justify-center w-full max-w-[1200px]"
+            style={{ marginLeft: 'auto', marginRight: 'auto' }}
+          >
             {services.map((svc, i) => (
               <motion.div
                 key={svc.title}
@@ -523,7 +526,7 @@ function App() {
                     </div>
                   </div>
 
-                  {/* Guaranteed Clean Bottom Badge (NEVER CUT OFF ON MOBILE) */}
+                  {/* Guaranteed Clean Bottom Badge */}
                   <div className="p-4 sm:p-5 pt-0 mt-auto">
                     <div className="pt-3 border-t border-slate-800/80 flex items-center justify-between">
                       <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-teal-500/15 border border-teal-500/30 text-teal-300 text-xs font-bold whitespace-nowrap">
@@ -542,7 +545,7 @@ function App() {
         </div>
       </section>
 
-      {/* ── Patient Registration Forms (PDF) (STRAIGHT EQUAL-HEIGHT BOXES + POPPING) ── */}
+      {/* ── Patient Registration Forms (PDF) (UNIFIED 1200PX WIDTH - EXACT SAME AS SERVICES) ── */}
       <section id="forms" className="section-wrapper py-16 sm:py-24 lg:py-28 bg-[#070e1f] text-white">
         <div className="site-container flex flex-col items-center">
           <motion.div
@@ -563,76 +566,74 @@ function App() {
             </p>
           </motion.div>
 
-          {/* Centered Grid with Straight Equal-Height Boxes */}
-          <div className="w-full flex justify-center">
-            <div
-              className="grid md:grid-cols-2 gap-6 sm:gap-7 w-full max-w-4xl items-stretch"
-              style={{ marginLeft: 'auto', marginRight: 'auto' }}
+          {/* Symmetrical 2-Card Grid (1200px Width - Exactly Symmetrical) */}
+          <div
+            className="grid md:grid-cols-2 gap-6 sm:gap-7 w-full max-w-[1200px] items-stretch"
+            style={{ marginLeft: 'auto', marginRight: 'auto' }}
+          >
+            {/* Child Registration */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-xl flex flex-col justify-between h-full card-pop-box"
             >
-              {/* Child Registration */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-                className="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-xl flex flex-col justify-between h-full card-pop-box"
-              >
-                <div>
-                  <div className="w-12 h-12 rounded-2xl bg-sky-900/50 text-sky-400 flex items-center justify-center mb-4 text-xl font-bold">
-                    📄
-                  </div>
-                  <span className="text-xs font-bold uppercase text-sky-400 tracking-wider">
-                    Pediatrics (Ages 0–18)
-                  </span>
-                  <h3 className="text-lg sm:text-xl font-bold text-white mt-1 mb-2">
-                    Child Registration Packet (PDF)
-                  </h3>
-                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-6">
-                    Official intake form for newborns, children, and teens. Includes patient medical history, insurance release, and parental consent.
-                  </p>
+              <div>
+                <div className="w-12 h-12 rounded-2xl bg-sky-900/50 text-sky-400 flex items-center justify-center mb-4 text-xl font-bold">
+                  📄
                 </div>
+                <span className="text-xs font-bold uppercase text-sky-400 tracking-wider">
+                  Pediatrics (Ages 0–18)
+                </span>
+                <h3 className="text-lg sm:text-xl font-bold text-white mt-1 mb-2">
+                  Child Registration Packet (PDF)
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-6">
+                  Official intake form for newborns, children, and teens. Includes patient medical history, insurance release, and parental consent.
+                </p>
+              </div>
 
-                <a
-                  href={childPacketPdf}
-                  download="High_Springs_Pediatrics_Child_Packet.pdf"
-                  className="inline-flex items-center justify-center gap-2 w-full py-3.5 rounded-xl bg-sky-600 hover:bg-sky-500 text-white font-bold text-sm shadow-md transition-colors active:scale-95"
-                >
-                  <FileTextIcon /> Download Child Packet (PDF)
-                </a>
-              </motion.div>
-
-              {/* Adult Registration */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-                className="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-xl flex flex-col justify-between h-full card-pop-box"
+              <a
+                href={childPacketPdf}
+                download="High_Springs_Pediatrics_Child_Packet.pdf"
+                className="inline-flex items-center justify-center gap-2 w-full py-3.5 rounded-xl bg-sky-600 hover:bg-sky-500 text-white font-bold text-sm shadow-md transition-colors active:scale-95"
               >
-                <div>
-                  <div className="w-12 h-12 rounded-2xl bg-teal-900/50 text-teal-400 flex items-center justify-center mb-4 text-xl font-bold">
-                    📋
-                  </div>
-                  <span className="text-xs font-bold uppercase text-teal-400 tracking-wider">
-                    Adult Primary Care
-                  </span>
-                  <h3 className="text-lg sm:text-xl font-bold text-white mt-1 mb-2">
-                    Adult New Patient Form (PDF)
-                  </h3>
-                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-6">
-                    Official adult intake form for Dr. Ramin Ahmad, M.D. Covers health history, cardiovascular care, and medication review.
-                  </p>
-                </div>
+                <FileTextIcon /> Download Child Packet (PDF)
+              </a>
+            </motion.div>
 
-                <a
-                  href={adultFormPdf}
-                  download="High_Springs_Primary_Care_Adult_Form.pdf"
-                  className="inline-flex items-center justify-center gap-2 w-full py-3.5 rounded-xl bg-teal-600 hover:bg-teal-500 text-white font-bold text-sm shadow-md transition-colors active:scale-95"
-                >
-                  <FileTextIcon /> Download Adult Form (PDF)
-                </a>
-              </motion.div>
-            </div>
+            {/* Adult Registration */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-xl flex flex-col justify-between h-full card-pop-box"
+            >
+              <div>
+                <div className="w-12 h-12 rounded-2xl bg-teal-900/50 text-teal-400 flex items-center justify-center mb-4 text-xl font-bold">
+                  📋
+                </div>
+                <span className="text-xs font-bold uppercase text-teal-400 tracking-wider">
+                  Adult Primary Care
+                </span>
+                <h3 className="text-lg sm:text-xl font-bold text-white mt-1 mb-2">
+                  Adult New Patient Form (PDF)
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-6">
+                  Official adult intake form for Dr. Ramin Ahmad, M.D. Covers health history, cardiovascular care, and medication review.
+                </p>
+              </div>
+
+              <a
+                href={adultFormPdf}
+                download="High_Springs_Primary_Care_Adult_Form.pdf"
+                className="inline-flex items-center justify-center gap-2 w-full py-3.5 rounded-xl bg-teal-600 hover:bg-teal-500 text-white font-bold text-sm shadow-md transition-colors active:scale-95"
+              >
+                <FileTextIcon /> Download Adult Form (PDF)
+              </a>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -640,7 +641,7 @@ function App() {
       {/* ── Insurance & Clinic Exterior (DARK BLUE NAVY) ───────────── */}
       <section id="insurance" className="section-wrapper py-16 sm:py-24 lg:py-28 bg-[#0a1224] border-y border-slate-800/80 text-white">
         <div className="site-container">
-          <div className="grid lg:grid-cols-2 gap-10 items-center justify-center w-full">
+          <div className="grid lg:grid-cols-2 gap-10 items-center justify-center w-full max-w-[1200px] mx-auto" style={{ marginLeft: 'auto', marginRight: 'auto' }}>
             <div>
               <span className="text-xs font-bold uppercase tracking-wider text-sky-400 block mb-2">
                 Insurance &amp; Coverage
@@ -664,7 +665,7 @@ function App() {
               </div>
             </div>
 
-            {/* Clinic Exterior Information Card with Pop Effect */}
+            {/* Clinic Exterior Information Card */}
             <div className="rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-800 shadow-xl bg-slate-900/90 p-5 sm:p-6 card-pop-box">
               <h3 className="text-lg font-bold text-white mb-2">High Springs Medical Facility</h3>
               <p className="text-xs sm:text-sm text-slate-300 mb-4 leading-relaxed">
@@ -681,7 +682,7 @@ function App() {
       {/* ── Contact & Location (DARK BLUE NAVY) ────────────────────── */}
       <section id="contact" className="section-wrapper py-16 sm:py-24 lg:py-32 bg-[#070e1f] text-white">
         <div className="site-container">
-          <div className="grid lg:grid-cols-2 gap-10 items-start justify-center w-full">
+          <div className="grid lg:grid-cols-2 gap-10 items-start justify-center w-full max-w-[1200px] mx-auto" style={{ marginLeft: 'auto', marginRight: 'auto' }}>
             <div>
               <span className="text-xs font-bold uppercase tracking-wider text-sky-400 block mb-2">
                 Office Information
@@ -738,7 +739,6 @@ function App() {
               </div>
             </div>
 
-            {/* Appointment Request Form with Pop Box */}
             <div className="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl card-pop-box">
               <h3 className="text-xl sm:text-2xl font-bold mb-2 text-white">Request an Appointment</h3>
               <p className="text-xs sm:text-sm text-slate-400 mb-5">
