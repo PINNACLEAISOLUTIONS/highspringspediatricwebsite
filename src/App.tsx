@@ -725,26 +725,19 @@ function App() {
                   ))}
                 </div>
               </div>
-
-              <div className="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
-                <span>Direct Office Billing</span>
-                <a href={CLINIC.phoneTel} className="text-sky-400 hover:text-sky-300 font-bold underline">
-                  Verify Coverage: {CLINIC.phone}
-                </a>
-              </div>
             </motion.div>
 
-            {/* Clinic Facility Card (NO PARKING FOOTER, NO EST 2004) */}
+            {/* Clinic Facility Card */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.15 }}
-              className="rounded-3xl overflow-hidden border border-slate-800 shadow-xl bg-slate-900/90 p-6 sm:p-8 flex flex-col justify-between h-full card-3d-box"
+              className="rounded-3xl border border-slate-800 shadow-xl bg-slate-900/90 p-5 sm:p-8 flex flex-col justify-between h-full card-3d-box"
             >
               <div>
                 <div className="flex items-center justify-between mb-3">
-                  <h3 className="text-xl sm:text-2xl font-black text-white">High Springs Medical Facility</h3>
+                  <h3 className="text-lg sm:text-2xl font-black text-white tracking-normal">High Springs Medical Facility</h3>
                 </div>
                 <p className="text-xs sm:text-sm text-slate-300 mb-5 leading-relaxed">
                   Our clinic building provides dedicated ground-level stroller access, ample handicap parking, and a comfortable child-friendly reception area at 19228 NW US Highway 441.
