@@ -41,15 +41,17 @@ const CheckIcon = () => (
 const UserIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
 )
+const ChevronDownIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+)
 
 /* ── Clinic Data ─────────────────────────────────── */
 const CLINIC = {
   name: 'High Springs Pediatrics & Primary Care',
   phone: '(386) 454-1156',
   phoneTel: 'tel:3864541156',
-  fax: '(386) 454-0466',
-  address: '19228 NW US Highway 441, High Springs, FL 32643',
   hours: 'Monday – Friday: 9:00 AM – 5:00 PM',
+  address: '19228 NW US Highway 441, High Springs, FL 32643',
 }
 
 const physicians = [
@@ -84,7 +86,6 @@ const services = [
     title: 'Pediatric Care',
     subtitle: 'Dr. Nasir Ahmed, M.D.',
     badge: 'Ages 0–18',
-    highlight: 'Same-Day Sick Care',
     desc: 'Newborn checkups, developmental milestones, and guaranteed same-day sick visits.',
     img: newbornCareImg,
     spotlight: 'rgba(14, 165, 233, 0.3)',
@@ -93,7 +94,6 @@ const services = [
     title: 'Adult Primary Care',
     subtitle: 'Dr. Ramin Ahmad, M.D.',
     badge: 'Adults & Seniors',
-    highlight: 'Chronic Care & Labs',
     desc: 'Annual wellness exams, chronic condition care, hypertension, and diabetes management.',
     img: primaryFamilyCareImg,
     spotlight: 'rgba(20, 184, 166, 0.3)',
@@ -102,7 +102,6 @@ const services = [
     title: 'Immunizations',
     subtitle: 'Children & Adults',
     badge: 'CDC Approved',
-    highlight: 'Full Protection',
     desc: 'CDC-approved childhood vaccines and adult booster shots (Flu, Tdap, Shingrix).',
     img: vaccinationsImg,
     spotlight: 'rgba(59, 130, 246, 0.3)',
@@ -111,7 +110,6 @@ const services = [
     title: 'Diagnostic Labs',
     subtitle: 'On-Site Diagnostic Suite',
     badge: 'Rapid Results',
-    highlight: 'On-Site Testing',
     desc: 'Rapid strep, flu, COVID, urinalysis, complete blood panels, and sports physicals.',
     img: diagnosticLabsImg,
     spotlight: 'rgba(245, 158, 11, 0.3)',
@@ -119,24 +117,27 @@ const services = [
 ]
 
 function App() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [navMenuOpen, setNavMenuOpen] = useState(false)
+  const [desktopDropdownOpen, setDesktopDropdownOpen] = useState(false)
   const [submitted, setSubmitted] = useState(false)
 
+  // Strictly enforce dark navy theme on root
   useEffect(() => {
     document.documentElement.classList.add('dark')
+    document.body.style.backgroundColor = '#070e1f'
   }, [])
 
   const navLinks = [
-    { label: 'Home', href: '#home' },
-    { label: 'Physicians', href: '#physicians' },
-    { label: 'Services', href: '#services' },
-    { label: 'Patient Forms', href: '#forms' },
-    { label: 'Insurance', href: '#insurance' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'Home', href: '#home', desc: 'Overview & Clinic Information' },
+    { label: 'Physicians', href: '#physicians', desc: 'Dr. Nasir Ahmed & Dr. Ramin Ahmad' },
+    { label: 'Services', href: '#services', desc: 'Pediatrics, Adult Care & Labs' },
+    { label: 'Patient Forms', href: '#forms', desc: 'Official Intake Forms (PDF)' },
+    { label: 'Insurance', href: '#insurance', desc: 'Accepted Plans & In-Network Coverage' },
+    { label: 'Contact', href: '#contact', desc: 'Phone, Hours & Online Request' },
   ]
 
   return (
-    <div className="min-h-screen bg-[#070e1f] text-slate-100 antialiased overflow-x-hidden flex flex-col w-full pb-16 md:pb-0">
+    <div className="min-h-screen bg-[#070e1f] text-slate-100 antialiased overflow-x-hidden flex flex-col w-full pb-16 md:pb-0 font-sans">
       {/* ── Top Utility Bar ────────────────────────── */}
       <div className="bg-[#03060f] text-slate-300 text-xs py-2 px-3 sm:px-4 border-b border-slate-800/80 w-full">
         <div className="site-container flex flex-col sm:flex-row items-center justify-between gap-1.5 sm:gap-2">
@@ -150,8 +151,8 @@ function App() {
             </span>
           </div>
           <div className="hidden sm:flex items-center gap-4 text-[11px] sm:text-xs">
-            <span className="hidden lg:flex items-center gap-1.5 text-slate-400 truncate max-w-sm">
-              <MapPinIcon /> {CLINIC.address}
+            <span className="text-rose-400 font-bold">
+              • For emergencies: Call 911
             </span>
             <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-semibold whitespace-nowrap">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
@@ -161,7 +162,7 @@ function App() {
         </div>
       </div>
 
-      {/* ── Main Navigation (HIGH-TECH MOBILE HEADER + MODERN DROPDOWN) ───── */}
+      {/* ── Main Navigation (HIGH-TECH MODERN DROPDOWN ON DESKTOP & MOBILE) ───── */}
       <nav className="sticky top-0 z-50 bg-[#070e1f]/95 backdrop-blur-md border-b border-slate-800/80 shadow-2xl w-full">
         <div className="site-container h-16 sm:h-20 flex items-center justify-between gap-2 sm:gap-4 px-3 sm:px-6">
           {/* Logo & Hot Title */}
@@ -179,56 +180,99 @@ function App() {
             </div>
           </a>
 
-          {/* Desktop Nav Links */}
-          <div className="hidden lg:flex items-center gap-6 text-sm font-semibold text-slate-300">
-            {navLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                className="hover:text-sky-400 transition-colors whitespace-nowrap"
+          {/* Desktop High-Tech Modern Navigation & Dropdown */}
+          <div className="hidden lg:flex items-center gap-4 text-sm font-semibold">
+            <a href="#home" className="px-3 py-2 text-slate-300 hover:text-white transition-colors">
+              Home
+            </a>
+            
+            {/* High-Tech Menu Dropdown on Desktop */}
+            <div className="relative">
+              <button
+                onClick={() => setDesktopDropdownOpen(!desktopDropdownOpen)}
+                onMouseEnter={() => setDesktopDropdownOpen(true)}
+                className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-900/80 border border-slate-700/80 text-slate-200 hover:text-sky-300 hover:border-sky-400/50 transition-all shadow-sm"
               >
-                {link.label}
-              </a>
-            ))}
+                <span>Browse Menu</span>
+                <ChevronDownIcon />
+              </button>
+
+              <AnimatePresence>
+                {desktopDropdownOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10, scale: 0.96 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: 10, scale: 0.96 }}
+                    transition={{ duration: 0.18 }}
+                    onMouseLeave={() => setDesktopDropdownOpen(false)}
+                    className="absolute top-full left-0 mt-2 w-72 rounded-2xl bg-slate-950/95 backdrop-blur-xl border border-sky-500/30 p-2 shadow-2xl z-50"
+                  >
+                    {navLinks.slice(1).map((item) => (
+                      <a
+                        key={item.label}
+                        href={item.href}
+                        onClick={() => setDesktopDropdownOpen(false)}
+                        className="flex flex-col p-2.5 rounded-xl hover:bg-sky-600/15 transition-all group"
+                      >
+                        <span className="text-sm font-bold text-white group-hover:text-sky-400">
+                          {item.label}
+                        </span>
+                        <span className="text-[11px] text-slate-400 font-normal">
+                          {item.desc}
+                        </span>
+                      </a>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
+            <a
+              href="#forms"
+              className="px-3 py-2 text-slate-300 hover:text-emerald-300 transition-colors flex items-center gap-1.5"
+            >
+              <FileTextIcon /> Forms (PDF)
+            </a>
           </div>
 
-          {/* Nav Right Quick Action */}
+          {/* Nav Right Action Buttons */}
           <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
             <a
               href={CLINIC.phoneTel}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-gradient-to-r from-sky-600 via-teal-600 to-emerald-600 hover:from-sky-500 hover:to-emerald-500 text-white text-xs sm:text-sm font-extrabold shadow-lg shadow-sky-500/20 whitespace-nowrap active:scale-95 transition-all"
+              className="inline-flex items-center gap-1.5 px-3.5 py-2 sm:px-5 sm:py-2.5 rounded-full bg-gradient-to-r from-sky-600 via-teal-600 to-emerald-600 hover:from-sky-500 hover:to-emerald-500 text-white text-xs sm:text-sm font-extrabold shadow-lg shadow-sky-500/20 whitespace-nowrap active:scale-95 transition-all"
             >
               <PhoneIcon />
               <span className="hidden sm:inline">{CLINIC.phone}</span>
               <span className="sm:hidden text-xs">Call</span>
             </a>
 
+            {/* Modern Dropdown Toggle Button for Mobile / Tablet */}
             <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2.5 rounded-xl text-slate-200 hover:text-white bg-slate-800/90 border border-sky-500/30 shadow-md active:scale-95 transition-all"
-              aria-label="Toggle Mobile Menu"
+              onClick={() => setNavMenuOpen(!navMenuOpen)}
+              className="p-2.5 rounded-xl text-slate-200 hover:text-white bg-slate-800/90 border border-sky-500/30 shadow-md active:scale-95 transition-all flex items-center gap-1"
+              aria-label="Toggle Navigation Menu"
             >
-              {mobileMenuOpen ? <CloseIcon /> : <MenuIcon />}
+              {navMenuOpen ? <CloseIcon /> : <MenuIcon />}
             </button>
           </div>
         </div>
 
-        {/* High-Tech Mobile Glassmorphic Dropdown */}
+        {/* High-Tech Mobile & Tablet Glassmorphic Dropdown */}
         <AnimatePresence>
-          {mobileMenuOpen && (
+          {navMenuOpen && (
             <motion.div
               initial={{ opacity: 0, y: -10, scale: 0.98 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -10, scale: 0.98 }}
               transition={{ duration: 0.2, ease: 'easeOut' }}
-              className="lg:hidden mx-3 mb-4 rounded-3xl border border-sky-500/30 bg-slate-950/95 backdrop-blur-2xl px-4 py-5 shadow-2xl overflow-hidden"
+              className="mx-3 mb-4 rounded-3xl border border-sky-500/30 bg-slate-950/98 backdrop-blur-2xl px-4 py-5 shadow-2xl overflow-hidden"
             >
               <div className="grid grid-cols-2 gap-2">
                 {navLinks.map((link) => (
                   <a
                     key={link.label}
                     href={link.href}
-                    onClick={() => setMobileMenuOpen(false)}
+                    onClick={() => setNavMenuOpen(false)}
                     className="flex items-center justify-between px-3.5 py-3 rounded-2xl bg-slate-900/90 hover:bg-sky-600/20 text-xs font-bold text-slate-100 border border-slate-800 hover:border-sky-400/40 transition-all shadow-sm"
                   >
                     <span>{link.label}</span>
@@ -246,7 +290,7 @@ function App() {
                 </a>
                 <a
                   href="#forms"
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={() => setNavMenuOpen(false)}
                   className="flex items-center justify-center gap-2 w-full py-2.5 rounded-2xl bg-slate-900 text-slate-200 text-xs font-bold border border-slate-700/80"
                 >
                   <FileTextIcon /> Download Registration Forms (PDF)
@@ -257,7 +301,7 @@ function App() {
         </AnimatePresence>
       </nav>
 
-      {/* ── Hero Section (HOT TITLE + CRISP CLINIC SHOWCASE) ── */}
+      {/* ── Hero Section (HOT TITLE + CLEAN CLINIC SHOWCASE) ── */}
       <section id="home" className="section-wrapper relative bg-[#070e1f] text-white py-12 sm:py-20 lg:py-28 overflow-hidden">
         <div className="absolute inset-0 z-0 pointer-events-none opacity-40">
           <Particles
@@ -384,7 +428,7 @@ function App() {
         </div>
       </section>
 
-      {/* ── Meet Our Physicians (HOT TITLE + PERFECTLY FITTED DOCTOR PICTURES) ── */}
+      {/* ── Meet Our Physicians (NO RAW HIGHLIGHTS, 1-COL ON MOBILE, PERFECTLY CENTERED) ── */}
       <section id="physicians" className="section-wrapper py-16 sm:py-24 lg:py-28 bg-[#070e1f] text-white">
         <div className="site-container flex flex-col items-center">
           <motion.div
@@ -403,9 +447,9 @@ function App() {
             </p>
           </motion.div>
 
-          {/* Symmetrical 2-Card Grid (1200px Width - Perfectly Symmetrical) */}
+          {/* Symmetrical Grid: 1-Column Staked on Mobile (Centered), 2-Column on Desktop */}
           <div
-            className="grid md:grid-cols-2 gap-6 lg:gap-8 items-stretch w-full max-w-[1200px]"
+            className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 items-stretch w-full max-w-[1200px]"
             style={{ marginLeft: 'auto', marginRight: 'auto' }}
           >
             {physicians.map((doc, idx) => (
@@ -415,14 +459,14 @@ function App() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: idx * 0.15 }}
-                className="w-full flex h-full"
+                className="w-full flex h-full max-w-xl mx-auto md:max-w-none"
               >
                 <SpotlightCard
                   spotlightColor={doc.spotlight}
-                  className="w-full bg-slate-900/90 rounded-3xl border border-slate-800 p-6 sm:p-8 md:p-9 shadow-2xl flex flex-col justify-between h-full card-pop-box"
+                  className="w-full bg-[#0a1224] rounded-3xl border border-slate-800 p-6 sm:p-8 md:p-9 shadow-2xl flex flex-col justify-between h-full card-pop-box"
                 >
                   <div>
-                    {/* Doctor Profile Header with Perfectly Fitted Large Photo */}
+                    {/* Doctor Profile Header with Centered Portrait on Mobile */}
                     <div className="flex flex-col sm:flex-row items-center sm:items-start gap-5 sm:gap-6 mb-5 text-center sm:text-left">
                       <div className="w-40 h-40 sm:w-40 sm:h-40 md:w-44 md:h-44 rounded-3xl overflow-hidden ring-4 ring-sky-500/25 border-2 border-sky-400/60 shadow-2xl flex-shrink-0 mx-auto sm:mx-0 bg-slate-950">
                         <img
@@ -464,7 +508,7 @@ function App() {
         </div>
       </section>
 
-      {/* ── Our Core Services (HOT TITLE + STRAIGHT EQUAL-HEIGHT BOXES) ── */}
+      {/* ── Our Core Services (NO RAW HIGHLIGHTS, NO BOTTOM-LEFT BADGES, STRAIGHT EQUAL-HEIGHT) ── */}
       <section id="services" className="section-wrapper py-16 sm:py-24 lg:py-28 bg-[#0a1224] border-y border-slate-800/80 text-white">
         <div className="site-container">
           <motion.div
@@ -483,7 +527,7 @@ function App() {
             </p>
           </motion.div>
 
-          {/* Symmetrical 4-Card Grid (1200px Width - Exactly Symmetrical) */}
+          {/* Symmetrical 4-Card Grid (1200px Width - Straight Equal Height) */}
           <div
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 items-stretch justify-center w-full max-w-[1200px]"
             style={{ marginLeft: 'auto', marginRight: 'auto' }}
@@ -499,7 +543,7 @@ function App() {
               >
                 <SpotlightCard
                   spotlightColor={svc.spotlight}
-                  className="w-full group bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-lg flex flex-col justify-between h-full card-pop-box"
+                  className="w-full group bg-[#070e1f] border border-slate-800 rounded-2xl overflow-hidden shadow-lg flex flex-col justify-between h-full card-pop-box"
                 >
                   <div>
                     {/* Fixed Height Image with Smooth Zoom */}
@@ -509,7 +553,7 @@ function App() {
                         alt={svc.title}
                         className="w-full h-full object-cover zoom-img"
                       />
-                      {/* Floating Badge */}
+                      {/* Floating Category Badge */}
                       <div className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-slate-950/80 backdrop-blur-md text-white text-[10px] font-bold tracking-wide border border-white/20 shadow-sm">
                         {svc.badge}
                       </div>
@@ -529,14 +573,11 @@ function App() {
                     </div>
                   </div>
 
-                  {/* Guaranteed Clean Bottom Badge */}
+                  {/* Clean Bottom Bar (NO ON-SITE TESTING / FULL PROTECTION / CHRONIC CARE / SICK CARE WORDS) */}
                   <div className="p-4 sm:p-5 pt-0 mt-auto">
-                    <div className="pt-3 border-t border-slate-800/80 flex items-center justify-between">
-                      <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-teal-500/15 border border-teal-500/30 text-teal-300 text-xs font-bold whitespace-nowrap">
-                        <span className="w-1.5 h-1.5 rounded-full bg-teal-400 animate-pulse flex-shrink-0" />
-                        {svc.highlight}
-                      </span>
-                      <span className="text-slate-400 group-hover:text-sky-400 group-hover:translate-x-1.5 transition-all text-sm font-bold">
+                    <div className="pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs font-bold text-slate-400 group-hover:text-sky-400 transition-colors">
+                      <span>Learn More</span>
+                      <span className="group-hover:translate-x-1.5 transition-transform text-sm font-bold">
                         &rarr;
                       </span>
                     </div>
@@ -548,7 +589,7 @@ function App() {
         </div>
       </section>
 
-      {/* ── Patient Registration Forms (PDF) (HOT TITLE + STRAIGHT 1200PX CARDS) ── */}
+      {/* ── Patient Registration Forms (PDF) (NO RAW HIGHLIGHTS, 1200PX STRAIGHT CARDS) ── */}
       <section id="forms" className="section-wrapper py-16 sm:py-24 lg:py-28 bg-[#070e1f] text-white">
         <div className="site-container flex flex-col items-center">
           <motion.div
@@ -569,7 +610,7 @@ function App() {
 
           {/* Symmetrical 2-Card Grid (1200px Width - Exactly Symmetrical) */}
           <div
-            className="grid md:grid-cols-2 gap-6 sm:gap-7 w-full max-w-[1200px] items-stretch"
+            className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-7 w-full max-w-[1200px] items-stretch"
             style={{ marginLeft: 'auto', marginRight: 'auto' }}
           >
             {/* Child Registration */}
@@ -578,7 +619,7 @@ function App() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-xl flex flex-col justify-between h-full card-pop-box"
+              className="bg-[#0a1224] border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-xl flex flex-col justify-between h-full card-pop-box"
             >
               <div>
                 <div className="w-12 h-12 rounded-2xl bg-sky-900/50 text-sky-400 flex items-center justify-center mb-4 text-xl font-bold">
@@ -610,7 +651,7 @@ function App() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-xl flex flex-col justify-between h-full card-pop-box"
+              className="bg-[#0a1224] border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-xl flex flex-col justify-between h-full card-pop-box"
             >
               <div>
                 <div className="w-12 h-12 rounded-2xl bg-teal-900/50 text-teal-400 flex items-center justify-center mb-4 text-xl font-bold">
@@ -639,7 +680,7 @@ function App() {
         </div>
       </section>
 
-      {/* ── Insurance & Clinic Exterior (STANDOUT HIGH-TECH CARD) ── */}
+      {/* ── Accepted Insurance Plans (STANDOUT HIGH-TECH CARD) ── */}
       <section id="insurance" className="section-wrapper py-16 sm:py-24 lg:py-28 bg-[#060d1d] border-y border-slate-800/80 text-white">
         <div className="site-container">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-10 items-stretch justify-center w-full max-w-[1200px] mx-auto" style={{ marginLeft: 'auto', marginRight: 'auto' }}>
@@ -741,7 +782,7 @@ function App() {
         </div>
       </section>
 
-      {/* ── Contact & Location (DARK BLUE NAVY) ────────────────────── */}
+      {/* ── Contact & Location (NO BLUE HIGHLIGHT, ENLARGED APPOINTMENT BOX) ── */}
       <section id="contact" className="section-wrapper py-16 sm:py-24 lg:py-32 bg-[#070e1f] text-white">
         <div className="site-container">
           <div className="grid lg:grid-cols-2 gap-10 items-start justify-center w-full max-w-[1200px] mx-auto" style={{ marginLeft: 'auto', marginRight: 'auto' }}>
@@ -783,7 +824,7 @@ function App() {
             </div>
 
             {/* Enlaraged Request an Appointment Box with Perfectly Fitting Dropdown */}
-            <div className="bg-slate-900 border border-slate-800 rounded-3xl p-7 sm:p-10 lg:p-12 shadow-2xl card-pop-box w-full">
+            <div className="bg-[#0a1224] border border-slate-800 rounded-3xl p-7 sm:p-10 lg:p-12 shadow-2xl card-pop-box w-full">
               <h3 className="text-2xl sm:text-3xl font-black mb-2 text-white">Request an Appointment</h3>
               <p className="text-xs sm:text-sm text-slate-400 mb-6">
                 Or call directly at <a href={CLINIC.phoneTel} className="text-sky-400 font-bold underline">{CLINIC.phone}</a> for immediate same-day scheduling.
@@ -815,7 +856,7 @@ function App() {
                     <input
                       type="text"
                       required
-                      className="w-full px-4 py-3 sm:py-3.5 rounded-2xl border border-slate-700 bg-slate-800/90 text-white text-sm sm:text-base outline-none focus:border-sky-400 focus:ring-2 focus:ring-sky-500/20 transition-all"
+                      className="w-full px-4 py-3 sm:py-3.5 rounded-2xl border border-slate-700 bg-slate-900 text-white text-sm sm:text-base outline-none focus:border-sky-400 focus:ring-2 focus:ring-sky-500/20 transition-all"
                       placeholder="Your full name"
                     />
                   </div>
@@ -827,7 +868,7 @@ function App() {
                     <input
                       type="tel"
                       required
-                      className="w-full px-4 py-3 sm:py-3.5 rounded-2xl border border-slate-700 bg-slate-800/90 text-white text-sm sm:text-base outline-none focus:border-sky-400 focus:ring-2 focus:ring-sky-500/20 transition-all"
+                      className="w-full px-4 py-3 sm:py-3.5 rounded-2xl border border-slate-700 bg-slate-900 text-white text-sm sm:text-base outline-none focus:border-sky-400 focus:ring-2 focus:ring-sky-500/20 transition-all"
                       placeholder="(386) 454-0000"
                     />
                   </div>
@@ -838,7 +879,7 @@ function App() {
                     </label>
                     <div className="relative">
                       <select
-                        className="w-full px-4 py-3 sm:py-3.5 rounded-2xl border border-slate-700 bg-slate-800 text-white text-xs sm:text-sm md:text-base font-medium outline-none focus:border-sky-400 focus:ring-2 focus:ring-sky-500/20 transition-all appearance-none cursor-pointer pr-10"
+                        className="w-full px-4 py-3 sm:py-3.5 rounded-2xl border border-slate-700 bg-slate-900 text-white text-xs sm:text-sm md:text-base font-medium outline-none focus:border-sky-400 focus:ring-2 focus:ring-sky-500/20 transition-all appearance-none cursor-pointer pr-10"
                       >
                         <option>Dr. Nasir Ahmed, MD (Pediatrics Ages 0–18)</option>
                         <option>Dr. Ramin Ahmad, MD (Adult Primary Care)</option>
