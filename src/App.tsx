@@ -45,52 +45,31 @@ const ChevronDownIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
 )
 
-/* ── Modern 2026 Brand Emblem (3D Medical Heart & Cross) ───── */
+/* ── Modern 2026 Brand Emblem (High Springs Caring Star & Hand Logo) ───── */
 const ClinicLogoEmblem = () => (
   <div className="relative flex-shrink-0 group-hover:scale-105 transition-transform duration-300">
-    {/* Soft dimensional ambient glow */}
-    <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-sky-500/40 via-teal-500/30 to-blue-600/40 blur-md opacity-80 group-hover:opacity-100 transition-opacity" />
-    
-    {/* 3D Glassmorphic Badge Frame */}
-    <div className="relative w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-b from-[#0e2246] to-[#061022] border-2 border-sky-400/60 shadow-xl flex items-center justify-center p-2">
-      <svg className="w-full h-full filter drop-shadow-[0_2px_6px_rgba(56,189,248,0.5)]" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-        {/* Soft Modern Heart Silhouette */}
-        <path
-          d="M24 41.5C24 41.5 8 31.2 8 19.5C8 13.8 12.6 9.2 18.3 9.2C21.6 9.2 24 11.2 24 11.2C24 11.2 26.4 9.2 29.7 9.2C35.4 9.2 40 13.8 40 19.5C40 31.2 24 41.5 24 41.5Z"
-          fill="url(#heartGrad)"
-          fillOpacity="0.25"
-          stroke="url(#heartStroke)"
-          strokeWidth="2.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        {/* 3D Elevated Medical Cross with Soft Rounded Caps */}
-        <path
-          d="M24 16V30M17 23H31"
-          stroke="url(#crossGrad)"
-          strokeWidth="3.8"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        {/* Specular Highlight Node */}
-        <circle cx="24" cy="23" r="2.2" fill="#ffffff" />
-        
-        {/* SVG Gradients */}
+    <div className="relative w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-b from-[#0e2246] to-[#061022] border-2 border-sky-400/60 shadow-xl flex items-center justify-center p-1.5">
+      <svg className="w-full h-full filter drop-shadow-[0_2px_8px_rgba(56,189,248,0.5)]" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <linearGradient id="heartGrad" x1="8" y1="9.2" x2="40" y2="41.5" gradientUnits="userSpaceOnUse">
-            <stop stopColor="#38bdf8" />
-            <stop offset="1" stopColor="#14b8a6" />
-          </linearGradient>
-          <linearGradient id="heartStroke" x1="8" y1="9.2" x2="36" y2="38" gradientUnits="userSpaceOnUse">
-            <stop stopColor="#7dd3fc" />
-            <stop offset="1" stopColor="#2dd4bf" />
-          </linearGradient>
-          <linearGradient id="crossGrad" x1="17" y1="16" x2="31" y2="30" gradientUnits="userSpaceOnUse">
-            <stop stopColor="#ffffff" />
+          <linearGradient id="starGrad" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
+            <stop stopColor="#0284c7" />
             <stop offset="0.5" stopColor="#38bdf8" />
-            <stop offset="1" stopColor="#0284c7" />
+            <stop offset="1" stopColor="#f59e0b" />
           </linearGradient>
         </defs>
+        {/* Stylized Care Star matching building sign */}
+        <path
+          d="M50 12L61 35L86 38L67 56L72 81L50 69L28 81L33 56L14 38L39 35L50 12Z"
+          fill="url(#starGrad)"
+          stroke="#ffffff"
+          strokeWidth="2.5"
+          strokeLinejoin="round"
+        />
+        {/* Caring Child Hand Silhouette */}
+        <path
+          d="M50 42C48 42 46.5 43.5 46.5 45.5V56C45 54.5 43 54.5 42 56C41 57.5 42 59.5 44 61.5L48 66C49.5 68 51.5 69 54 69C58 69 60.5 65.5 60.5 61.5V47.5C60.5 45.5 59 44 57 44C55.5 44 54.5 45 54 46V45.5C54 43.5 52.5 42 50.5 42H50Z"
+          fill="#ffffff"
+        />
       </svg>
     </div>
   </div>
@@ -188,31 +167,7 @@ function App() {
 
   return (
     <div className="min-h-screen bg-[#070e1f] text-slate-100 antialiased overflow-x-hidden flex flex-col w-full pb-16 md:pb-0 font-sans">
-      {/* ── Top Utility Bar (NO DUPLICATE PHONE NUMBER) ────────────── */}
-      <div className="bg-[#03060f] text-slate-300 text-xs py-2 px-3 sm:px-4 border-b border-slate-800/80 w-full">
-        <div className="site-container flex flex-col sm:flex-row items-center justify-between gap-1.5 sm:gap-2">
-          <div className="flex items-center gap-3 sm:gap-4 flex-wrap justify-center text-[11px] sm:text-xs">
-            <span className="flex items-center gap-1.5 whitespace-nowrap text-slate-300 font-medium">
-              <ClockIcon /> {CLINIC.hours}
-            </span>
-            <span className="text-slate-600 hidden sm:inline">•</span>
-            <span className="text-rose-400 font-bold hidden sm:inline">
-              • For emergencies: Call 911
-            </span>
-          </div>
-          <div className="flex items-center gap-4 text-[11px] sm:text-xs">
-            <span className="text-rose-400 font-bold sm:hidden">
-              • Emergency: Call 911
-            </span>
-            <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-semibold whitespace-nowrap">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-              Accepting Patients
-            </span>
-          </div>
-        </div>
-      </div>
-
-      {/* ── Main Navigation (CUSTOM EMBLEM, CONTRASTING BLUE HEADER, NO DESKTOP HAMBURGER) ───── */}
+      {/* ── Main Navigation (LIFTED TO THE VERY TOP, NO TOP BAR CLUTTER) ───── */}
       <nav className="sticky top-0 z-50 bg-[#070e1f]/95 backdrop-blur-md border-b border-slate-800/80 shadow-2xl w-full">
         <div className="site-container h-20 sm:h-24 flex items-center justify-between gap-3 sm:gap-6 px-3 sm:px-6">
           {/* Custom Brand Emblem & High-Contrast Typography */}
@@ -220,7 +175,7 @@ function App() {
             <ClinicLogoEmblem />
 
             <div className="flex flex-col justify-center min-w-0">
-              {/* DARKER BLUE FOR HIGH SPRINGS, LIGHTER FOR PEDIATRICS & PRIMARY CARE */}
+              {/* HIGH SPRINGS in White/Dark Blue, PEDIATRICS in Sky Blue */}
               <div className="font-black text-lg sm:text-2xl lg:text-3xl tracking-tight leading-tight whitespace-nowrap transition-colors">
                 <span className="text-white">High Springs</span>{' '}
                 <span className="text-sky-400 font-black">Pediatrics</span>
@@ -242,7 +197,7 @@ function App() {
               <button
                 onClick={() => setDesktopDropdownOpen(!desktopDropdownOpen)}
                 onMouseEnter={() => setDesktopDropdownOpen(true)}
-                className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-slate-900/90 border border-slate-700/80 text-slate-200 hover:text-sky-300 hover:border-sky-400/50 transition-all shadow-sm"
+                className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-slate-900/90 border border-slate-700/80 text-slate-200 hover:text-sky-300 hover:border-sky-400/50 transition-all shadow-sm cursor-pointer"
               >
                 <span>Browse Menu</span>
                 <ChevronDownIcon />
@@ -352,8 +307,8 @@ function App() {
         </AnimatePresence>
       </nav>
 
-      {/* ── Hero Section (REFINED BALANCED COLORING, LIGHT BUBBLES ON PHOTO) ── */}
-      <section id="home" className="section-wrapper relative bg-[#070e1f] text-white py-12 sm:py-20 lg:py-28 overflow-hidden">
+      {/* ── Hero Section (LIFTED CLEAN HERO - NO ESTABLISHED 2004 PILL) ── */}
+      <section id="home" className="section-wrapper relative bg-[#070e1f] text-white py-10 sm:py-16 lg:py-20 overflow-hidden">
         <div className="absolute inset-0 z-0 pointer-events-none opacity-30">
           <Particles
             particleCount={35}
@@ -365,20 +320,11 @@ function App() {
         </div>
 
         <div className="relative z-10 site-container flex flex-col items-center justify-center px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900/90 text-sky-200 text-xs font-bold mb-4 border border-sky-400/30 backdrop-blur-md shadow-lg"
-          >
-            <ShinyText text="High Springs, FL • Established 2004" color="#bae6fd" shineColor="#ffffff" speed={2.5} />
-          </motion.div>
-
-          {/* REFINED BALANCED HERO TITLE (NOT TOO BLUE, CRISP AND NATURAL) */}
+          {/* REFINED BALANCED HERO TITLE (NO ROBOTIC GRADIENT, CRISP AND NATURAL) */}
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
+            transition={{ duration: 0.6 }}
             className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[1.15] mb-4 text-center max-w-4xl"
           >
             <span className="text-white">Expert Family Care</span>
@@ -391,17 +337,17 @@ function App() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.15 }}
             className="text-xs sm:text-base md:text-lg text-slate-300 mb-6 leading-relaxed max-w-2xl mx-auto font-medium text-center"
           >
             Led by founding pediatrician <strong>Dr. Nasir Ahmed, M.D.</strong> and internal medicine physician <strong>Dr. Ramin Ahmad, M.D.</strong> Dedicated family healthcare in High Springs.
           </motion.p>
 
-          {/* Clinic Photo Box with LIGHT BUBBLES ANIMATION */}
+          {/* Clinic Photo Box with LIGHT BUBBLES ANIMATION (NO SERVING SINCE 2004 BADGE) */}
           <motion.div
             initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7, delay: 0.25 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
             className="w-full max-w-[1200px] rounded-2xl sm:rounded-3xl overflow-hidden border-2 border-sky-500/40 shadow-2xl mb-7 relative group card-3d-box"
           >
             <div className="h-52 sm:h-72 md:h-80 w-full relative overflow-hidden">
@@ -421,12 +367,10 @@ function App() {
                 <span className="light-bubble" style={{ left: '90%', width: '14px', height: '14px', animationDuration: '5.8s', animationDelay: '3.1s' }} />
               </div>
 
+              {/* Clean Bottom Overlay (ONLY ADDRESS, NO SERVING SINCE 2004) */}
               <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-slate-950/95 via-slate-950/60 to-transparent p-3 sm:p-4 flex items-center justify-between text-xs text-white z-20">
                 <span className="font-bold flex items-center gap-1.5">
                   <MapPinIcon /> 19228 NW US Highway 441, High Springs, FL
-                </span>
-                <span className="hidden sm:inline-block px-2.5 py-0.5 rounded-full bg-sky-500/30 border border-sky-400/40 text-[11px] font-bold">
-                  Serving Since 2004
                 </span>
               </div>
             </div>
@@ -435,7 +379,7 @@ function App() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.35 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
             className="flex flex-wrap items-center justify-center gap-2 text-[11px] sm:text-xs md:text-sm font-medium text-slate-200 mb-7 max-w-xl mx-auto"
           >
             <span className="px-3 py-1 rounded-xl bg-slate-900/90 border border-slate-700 shadow">✓ Same-Day Sick Visits</span>
@@ -446,7 +390,7 @@ function App() {
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
+            transition={{ duration: 0.6, delay: 0.35 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-3 w-full sm:w-auto"
           >
             <a
@@ -490,7 +434,7 @@ function App() {
         </div>
       </section>
 
-      {/* ── Meet Our Physicians (BLUE TITLE, 1-COL ON MOBILE, PERFECTLY CENTERED) ── */}
+      {/* ── Meet Our Physicians (BLUE TITLE, 1-COL ON MOBILE, NO BOTTOM ACCEPTING PATIENTS BAR) ── */}
       <section id="physicians" className="section-wrapper py-16 sm:py-24 lg:py-28 bg-[#070e1f] text-white w-full">
         <div className="site-container flex flex-col items-center">
           <motion.div
@@ -558,11 +502,6 @@ function App() {
                       ))}
                     </ul>
                   </div>
-
-                  <div className="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs font-bold">
-                    <span className="text-sky-400">Accepting Patients</span>
-                    <span className="text-emerald-400">High Springs Clinic</span>
-                  </div>
                 </SpotlightCard>
               </motion.div>
             ))}
@@ -570,7 +509,7 @@ function App() {
         </div>
       </section>
 
-      {/* ── Our Core Services (BLUE TITLE, CLEAN CARDS, 3D POPPING) ──── */}
+      {/* ── Our Core Services (BLUE TITLE, CLEAN CARDS, NO LEARN MORE AT BOTTOM) ──── */}
       <section id="services" className="section-wrapper py-16 sm:py-24 lg:py-28 bg-[#0a1224] border-y border-slate-800/80 text-white w-full">
         <div className="site-container flex flex-col items-center">
           <motion.div
@@ -589,7 +528,7 @@ function App() {
             </p>
           </motion.div>
 
-          {/* Symmetrical 4-Card Grid (1200px Width - 3D Equal Height) */}
+          {/* Symmetrical 4-Card Grid (1200px Width - 3D Equal Height - NO LEARN MORE) */}
           <div
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 items-stretch justify-center w-full max-w-[1200px]"
             style={{ marginLeft: 'auto', marginRight: 'auto' }}
@@ -622,26 +561,16 @@ function App() {
                     </div>
 
                     {/* Card Content with Straight Aligned Spacing */}
-                    <div className="p-4 sm:p-5 text-left">
+                    <div className="p-5 text-left">
                       <span className="inline-block text-[11px] font-bold uppercase tracking-wider mb-1">
                         <ShinyText text={svc.subtitle} color="#38bdf8" shineColor="#ffffff" speed={2.5} />
                       </span>
                       <h3 className="text-lg font-bold text-white mb-2 min-h-[1.75rem]">
                         {svc.title}
                       </h3>
-                      <p className="text-xs sm:text-sm text-slate-300 leading-relaxed min-h-[3rem]">
+                      <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
                         {svc.desc}
                       </p>
-                    </div>
-                  </div>
-
-                  {/* Clean Bottom Bar (NO EXTRA BOTTOM-LEFT WORDS) */}
-                  <div className="p-4 sm:p-5 pt-0 mt-auto">
-                    <div className="pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs font-bold text-slate-400 group-hover:text-sky-400 transition-colors">
-                      <span>Learn More</span>
-                      <span className="group-hover:translate-x-1.5 transition-transform text-sm font-bold">
-                        &rarr;
-                      </span>
                     </div>
                   </div>
                 </SpotlightCard>
@@ -805,7 +734,7 @@ function App() {
               </div>
             </motion.div>
 
-            {/* Clinic Facility Card (Balanced Height) */}
+            {/* Clinic Facility Card (NO PARKING FOOTER, NO EST 2004) */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -816,7 +745,6 @@ function App() {
               <div>
                 <div className="flex items-center justify-between mb-3">
                   <h3 className="text-xl sm:text-2xl font-black text-white">High Springs Medical Facility</h3>
-                  <span className="text-xs font-bold text-sky-400">Est. 2004</span>
                 </div>
                 <p className="text-xs sm:text-sm text-slate-300 mb-5 leading-relaxed">
                   Our clinic building provides dedicated ground-level stroller access, ample handicap parking, and a comfortable child-friendly reception area at 19228 NW US Highway 441.
@@ -831,21 +759,15 @@ function App() {
                     <span className="font-semibold flex items-center gap-1.5">
                       <MapPinIcon /> High Springs, Florida 32643
                     </span>
-                    <span className="text-emerald-400 font-bold">Open Mon–Fri</span>
                   </div>
                 </div>
-              </div>
-
-              <div className="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs font-bold">
-                <span className="text-slate-400">Private On-Site Parking</span>
-                <span className="text-teal-400">Stroller &amp; Wheelchair Accessible</span>
               </div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* ── Contact & Location (HUMAN MEDICAL NAVY COLORING - NO ROBOTIC GRADIENTS) ── */}
+      {/* ── Contact & Location (HUMAN MEDICAL NAVY COLORING) ── */}
       <section id="contact" className="section-wrapper py-16 sm:py-24 lg:py-32 bg-[#070e1f] text-white w-full">
         <div className="site-container">
           <div className="grid lg:grid-cols-2 gap-10 items-start justify-center w-full max-w-[1200px] mx-auto" style={{ marginLeft: 'auto', marginRight: 'auto' }}>
@@ -886,7 +808,7 @@ function App() {
               </div>
             </div>
 
-            {/* Natural Human Medical Appointment Form (Refined Navy Background, Solid Professional Blue Button) */}
+            {/* Natural Human Medical Appointment Form */}
             <div className="bg-[#0b162b] border border-slate-700/80 rounded-3xl p-7 sm:p-10 lg:p-12 shadow-2xl card-3d-box w-full">
               <h3 className="text-2xl sm:text-3xl font-black mb-2 text-white">Request an Appointment</h3>
               <p className="text-xs sm:text-sm text-slate-300 mb-6">
@@ -903,7 +825,7 @@ function App() {
                   </p>
                   <button
                     onClick={() => setSubmitted(false)}
-                    className="mt-5 px-5 py-2.5 rounded-xl bg-emerald-600 text-xs font-bold text-white hover:bg-emerald-500"
+                    className="mt-5 px-5 py-2.5 rounded-xl bg-emerald-600 text-xs font-bold text-white hover:bg-emerald-500 cursor-pointer"
                   >
                     Send Another Request
                   </button>
