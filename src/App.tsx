@@ -751,67 +751,51 @@ function App() {
                 <span className="bg-gradient-to-r from-sky-400 to-teal-400 bg-clip-text text-transparent">Our Clinic</span>
               </h2>
               <p className="text-xs sm:text-base text-slate-300 mb-6 leading-relaxed">
-                Conveniently located on US Highway 441 in High Springs with ground-level parking and easy stroller access.
+                Contact our friendly medical reception desk for appointments, questions, and records.
               </p>
 
-              <div className="space-y-4 sm:space-y-5">
-                <div className="flex items-start gap-3.5 sm:gap-4">
-                  <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-sky-600/20 text-sky-400 flex items-center justify-center flex-shrink-0">
+              <div className="space-y-5 sm:space-y-6">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-2xl bg-sky-600/20 text-sky-400 flex items-center justify-center flex-shrink-0">
                     <PhoneIcon />
                   </div>
                   <div>
-                    <div className="text-[11px] sm:text-xs text-slate-400 uppercase font-bold tracking-wider">Telephone Line</div>
-                    <a href={CLINIC.phoneTel} className="text-lg sm:text-2xl font-black text-sky-300 hover:text-white transition-colors">
+                    <div className="text-xs text-slate-400 uppercase font-bold tracking-wider">Telephone Line</div>
+                    <a href={CLINIC.phoneTel} className="text-xl sm:text-2xl font-black text-sky-300 hover:text-white transition-colors">
                       {CLINIC.phone}
                     </a>
-                    <div className="text-[11px] sm:text-xs text-slate-400 mt-0.5">Fax: {CLINIC.fax}</div>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3.5 sm:gap-4">
-                  <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-teal-600/20 text-teal-400 flex items-center justify-center flex-shrink-0">
-                    <MapPinIcon />
-                  </div>
-                  <div>
-                    <div className="text-[11px] sm:text-xs text-slate-400 uppercase font-bold tracking-wider">Clinic Address</div>
-                    <div className="text-sm sm:text-lg font-bold text-white mt-0.5">{CLINIC.address}</div>
-                    <a
-                      href={`https://maps.google.com/?q=${encodeURIComponent(CLINIC.address)}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-xs font-bold text-teal-400 hover:underline inline-block mt-1"
-                    >
-                      Google Maps Directions &rarr;
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3.5 sm:gap-4">
-                  <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-sky-600/20 text-sky-400 flex items-center justify-center flex-shrink-0">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-2xl bg-teal-600/20 text-teal-400 flex items-center justify-center flex-shrink-0">
                     <ClockIcon />
                   </div>
                   <div>
-                    <div className="text-[11px] sm:text-xs text-slate-400 uppercase font-bold tracking-wider">Office Hours</div>
-                    <div className="text-sm sm:text-base font-semibold text-white mt-0.5">{CLINIC.hours}</div>
-                    <div className="text-[11px] sm:text-xs text-slate-400 mt-0.5">Saturday &amp; Sunday: Closed &bull; Emergency: Call 911</div>
+                    <div className="text-xs text-slate-400 uppercase font-bold tracking-wider">Office Hours</div>
+                    <div className="text-sm sm:text-base font-bold text-white mt-0.5">Monday – Friday: 9:00 AM – 5:00 PM</div>
+                    <div className="text-xs font-bold text-rose-400 mt-1.5 flex items-center gap-1">
+                      <span>•</span> For emergencies: Call 911
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl card-pop-box">
-              <h3 className="text-xl sm:text-2xl font-bold mb-2 text-white">Request an Appointment</h3>
-              <p className="text-xs sm:text-sm text-slate-400 mb-5">
+            {/* Enlaraged Request an Appointment Box with Perfectly Fitting Dropdown */}
+            <div className="bg-slate-900 border border-slate-800 rounded-3xl p-7 sm:p-10 lg:p-12 shadow-2xl card-pop-box w-full">
+              <h3 className="text-2xl sm:text-3xl font-black mb-2 text-white">Request an Appointment</h3>
+              <p className="text-xs sm:text-sm text-slate-400 mb-6">
                 Or call directly at <a href={CLINIC.phoneTel} className="text-sky-400 font-bold underline">{CLINIC.phone}</a> for immediate same-day scheduling.
               </p>
 
               {submitted ? (
-                <div className="bg-emerald-950/60 border border-emerald-800 rounded-2xl p-6 text-center">
-                  <p className="text-base sm:text-lg font-bold text-emerald-200">Appointment Request Sent</p>
-                  <p className="text-xs sm:text-sm text-emerald-300 mt-1">Our scheduling desk will contact you shortly.</p>
+                <div className="bg-emerald-950/60 border border-emerald-800 rounded-2xl p-8 text-center">
+                  <p className="text-lg sm:text-xl font-bold text-emerald-200">Appointment Request Sent</p>
+                  <p className="text-xs sm:text-sm text-emerald-300 mt-2">Our scheduling desk will contact you shortly.</p>
                   <button
                     onClick={() => setSubmitted(false)}
-                    className="mt-4 px-4 py-2 rounded-xl bg-emerald-600 text-xs font-semibold text-white"
+                    className="mt-5 px-5 py-2.5 rounded-xl bg-emerald-600 text-xs font-bold text-white hover:bg-emerald-500"
                   >
                     Send Another Request
                   </button>
@@ -822,49 +806,55 @@ function App() {
                     e.preventDefault()
                     setSubmitted(true)
                   }}
-                  className="space-y-3.5 sm:space-y-4"
+                  className="space-y-4 sm:space-y-5"
                 >
                   <div>
-                    <label className="block text-[11px] sm:text-xs font-bold text-slate-400 mb-1 uppercase tracking-wider">
+                    <label className="block text-xs font-bold text-slate-300 mb-1.5 uppercase tracking-wider">
                       Patient / Parent Name *
                     </label>
                     <input
                       type="text"
                       required
-                      className="w-full px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-xl border border-slate-700 bg-slate-800 text-white text-xs sm:text-sm outline-none focus:border-sky-500"
+                      className="w-full px-4 py-3 sm:py-3.5 rounded-2xl border border-slate-700 bg-slate-800/90 text-white text-sm sm:text-base outline-none focus:border-sky-400 focus:ring-2 focus:ring-sky-500/20 transition-all"
                       placeholder="Your full name"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-[11px] sm:text-xs font-bold text-slate-400 mb-1 uppercase tracking-wider">
+                    <label className="block text-xs font-bold text-slate-300 mb-1.5 uppercase tracking-wider">
                       Phone Number *
                     </label>
                     <input
                       type="tel"
                       required
-                      className="w-full px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-xl border border-slate-700 bg-slate-800 text-white text-xs sm:text-sm outline-none focus:border-sky-500"
+                      className="w-full px-4 py-3 sm:py-3.5 rounded-2xl border border-slate-700 bg-slate-800/90 text-white text-sm sm:text-base outline-none focus:border-sky-400 focus:ring-2 focus:ring-sky-500/20 transition-all"
                       placeholder="(386) 454-0000"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-[11px] sm:text-xs font-bold text-slate-400 mb-1 uppercase tracking-wider">
+                    <label className="block text-xs font-bold text-slate-300 mb-1.5 uppercase tracking-wider">
                       Physician / Service *
                     </label>
-                    <select
-                      className="w-full px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-xl border border-slate-700 bg-slate-800 text-white text-xs sm:text-sm outline-none focus:border-sky-500"
-                    >
-                      <option>Dr. Nasir Ahmed, MD (Pediatrics Ages 0–18)</option>
-                      <option>Dr. Ramin Ahmad, MD (Adult Primary Care)</option>
-                      <option>Guaranteed Same-Day Sick Visit</option>
-                      <option>Immunizations &amp; Physicals</option>
-                    </select>
+                    <div className="relative">
+                      <select
+                        className="w-full px-4 py-3 sm:py-3.5 rounded-2xl border border-slate-700 bg-slate-800 text-white text-xs sm:text-sm md:text-base font-medium outline-none focus:border-sky-400 focus:ring-2 focus:ring-sky-500/20 transition-all appearance-none cursor-pointer pr-10"
+                      >
+                        <option>Dr. Nasir Ahmed, MD (Pediatrics Ages 0–18)</option>
+                        <option>Dr. Ramin Ahmad, MD (Adult Primary Care)</option>
+                        <option>Guaranteed Same-Day Sick Visit</option>
+                        <option>Immunizations &amp; Physicals</option>
+                        <option>On-Site Diagnostic Labs</option>
+                      </select>
+                      <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-slate-400">
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7" /></svg>
+                      </div>
+                    </div>
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full py-3 sm:py-3.5 rounded-xl bg-gradient-to-r from-sky-600 to-teal-600 hover:from-sky-500 hover:to-teal-500 text-white font-extrabold text-xs sm:text-base shadow-xl transition-all active:scale-98"
+                    className="w-full py-3.5 sm:py-4 rounded-2xl bg-gradient-to-r from-sky-600 via-teal-600 to-emerald-600 hover:from-sky-500 hover:to-emerald-500 text-white font-black text-sm sm:text-base shadow-xl shadow-sky-600/30 transition-all active:scale-98"
                   >
                     Submit Appointment Request
                   </button>
