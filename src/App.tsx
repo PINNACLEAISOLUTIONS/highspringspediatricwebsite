@@ -638,43 +638,104 @@ function App() {
         </div>
       </section>
 
-      {/* ── Insurance & Clinic Exterior (DARK BLUE NAVY) ───────────── */}
-      <section id="insurance" className="section-wrapper py-16 sm:py-24 lg:py-28 bg-[#0a1224] border-y border-slate-800/80 text-white">
+      {/* ── Insurance & Clinic Exterior (STANDOUT HIGH-TECH CARD) ── */}
+      <section id="insurance" className="section-wrapper py-16 sm:py-24 lg:py-28 bg-[#060d1d] border-y border-slate-800/80 text-white">
         <div className="site-container">
-          <div className="grid lg:grid-cols-2 gap-10 items-center justify-center w-full max-w-[1200px] mx-auto" style={{ marginLeft: 'auto', marginRight: 'auto' }}>
-            <div>
-              <span className="text-xs font-bold uppercase tracking-wider text-sky-400 block mb-2">
-                Insurance &amp; Coverage
-              </span>
-              <h2 className="text-2xl sm:text-3xl font-black text-white mb-3">
-                Accepted Insurance Plans
-              </h2>
-              <p className="text-xs sm:text-base text-slate-300 leading-relaxed mb-6">
-                We accept most major commercial insurance carriers, Medicare for adult primary care, and Florida Medicaid.
-              </p>
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-10 items-stretch justify-center w-full max-w-[1200px] mx-auto" style={{ marginLeft: 'auto', marginRight: 'auto' }}>
+            {/* Standout High-Tech Accepted Insurance Plans Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="bg-gradient-to-br from-slate-900/95 via-sky-950/30 to-teal-950/20 border-2 border-sky-400/50 rounded-3xl p-6 sm:p-8 shadow-[0_0_35px_-5px_rgba(14,165,233,0.3)] flex flex-col justify-between h-full card-pop-box"
+            >
+              <div>
+                <div className="flex items-center justify-between gap-3 mb-3 flex-wrap">
+                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight">
+                    Accepted Insurance Plans
+                  </h2>
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 text-xs font-bold tracking-wide">
+                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                    In-Network Verified
+                  </span>
+                </div>
+                
+                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-6">
+                  We accept most major commercial insurance carriers, Medicare for adult primary care, and Florida Medicaid. If you have questions about your specific co-pay or network tier, our office billing staff is here to assist.
+                </p>
 
-              <div className="grid grid-cols-2 gap-2.5 text-xs sm:text-sm font-semibold text-slate-200">
-                <span className="flex items-center gap-2"><CheckIcon /> Florida Blue</span>
-                <span className="flex items-center gap-2"><CheckIcon /> Medicare</span>
-                <span className="flex items-center gap-2"><CheckIcon /> Florida Medicaid</span>
-                <span className="flex items-center gap-2"><CheckIcon /> Staywell / Sunshine</span>
-                <span className="flex items-center gap-2"><CheckIcon /> UnitedHealthcare</span>
-                <span className="flex items-center gap-2"><CheckIcon /> Aetna / Cigna</span>
-                <span className="flex items-center gap-2"><CheckIcon /> Tricare / CHAMPVA</span>
-                <span className="flex items-center gap-2"><CheckIcon /> Direct Billing</span>
+                {/* High-Tech Plan Chips */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3 text-xs sm:text-sm font-semibold">
+                  {[
+                    { name: 'Florida Blue (BCBS)', tag: 'Preferred Network' },
+                    { name: 'Medicare Part B', tag: 'Adult Primary' },
+                    { name: 'Florida Medicaid', tag: 'State Health' },
+                    { name: 'Staywell / Sunshine', tag: 'Managed Care' },
+                    { name: 'UnitedHealthcare', tag: 'Commercial' },
+                    { name: 'Aetna & Cigna', tag: 'In-Network' },
+                    { name: 'Tricare & CHAMPVA', tag: 'Military Care' },
+                    { name: 'Direct Billing Support', tag: 'HSA / FSA / Self' },
+                  ].map((plan) => (
+                    <div
+                      key={plan.name}
+                      className="flex items-center justify-between p-3 rounded-xl bg-slate-800/80 hover:bg-slate-800 border border-slate-700/80 hover:border-sky-400/50 transition-all shadow-sm group"
+                    >
+                      <span className="flex items-center gap-2 text-slate-100 font-bold group-hover:text-sky-300 transition-colors">
+                        <CheckIcon /> {plan.name}
+                      </span>
+                      <span className="text-[10px] text-slate-400 font-medium px-2 py-0.5 rounded-md bg-slate-900/60 border border-slate-700/50 whitespace-nowrap">
+                        {plan.tag}
+                      </span>
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
 
-            {/* Clinic Exterior Information Card */}
-            <div className="rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-800 shadow-xl bg-slate-900/90 p-5 sm:p-6 card-pop-box">
-              <h3 className="text-lg font-bold text-white mb-2">High Springs Medical Facility</h3>
-              <p className="text-xs sm:text-sm text-slate-300 mb-4 leading-relaxed">
-                Our clinic building provides direct ground-level stroller access and parking.
-              </p>
-              <div className="h-52 sm:h-64 rounded-2xl overflow-hidden shadow-inner">
-                <img src={clinicExteriorImg} alt="High Springs Clinic Entrance" className="w-full h-full object-cover zoom-img" />
+              <div className="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
+                <span>Direct Office Billing</span>
+                <a href={CLINIC.phoneTel} className="text-sky-400 hover:text-sky-300 font-bold underline">
+                  Verify Coverage: {CLINIC.phone}
+                </a>
               </div>
-            </div>
+            </motion.div>
+
+            {/* Clinic Facility Card (Balanced Height) */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.15 }}
+              className="rounded-3xl overflow-hidden border border-slate-800 shadow-xl bg-slate-900/90 p-6 sm:p-8 flex flex-col justify-between h-full card-pop-box"
+            >
+              <div>
+                <div className="flex items-center justify-between mb-3">
+                  <h3 className="text-xl sm:text-2xl font-black text-white">High Springs Medical Facility</h3>
+                  <span className="text-xs font-bold text-sky-400">Est. 2004</span>
+                </div>
+                <p className="text-xs sm:text-sm text-slate-300 mb-5 leading-relaxed">
+                  Our clinic building provides dedicated ground-level stroller access, ample handicap parking, and a comfortable child-friendly reception area at 19228 NW US Highway 441.
+                </p>
+                <div className="h-60 sm:h-72 rounded-2xl overflow-hidden shadow-inner relative group">
+                  <img
+                    src={clinicExteriorImg}
+                    alt="High Springs Clinic Entrance"
+                    className="w-full h-full object-cover zoom-img"
+                  />
+                  <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-slate-950/90 via-slate-950/50 to-transparent p-3 text-xs text-slate-200 flex items-center justify-between">
+                    <span className="font-semibold flex items-center gap-1.5">
+                      <MapPinIcon /> High Springs, Florida 32643
+                    </span>
+                    <span className="text-emerald-400 font-bold">Open Mon–Fri</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs font-bold">
+                <span className="text-slate-400">Private On-Site Parking</span>
+                <span className="text-teal-400">Stroller &amp; Wheelchair Accessible</span>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
