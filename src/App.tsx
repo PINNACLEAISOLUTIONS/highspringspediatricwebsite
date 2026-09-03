@@ -18,28 +18,28 @@ import './App.css'
 
 /* ── SVG Icons ───────────────────────────────────── */
 const PhoneIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
 )
 const ClockIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
 )
 const MapPinIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
 )
 const MenuIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
 )
 const CloseIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
 )
 const FileTextIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
 )
 const CheckIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
 )
 const UserIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
 )
 
 /* ── Clinic Data ─────────────────────────────────── */
@@ -161,21 +161,21 @@ function App() {
         </div>
       </div>
 
-      {/* ── Main Navigation (MOBILE-OPTIMIZED WITH NO TEXT CUTOFF) ───── */}
+      {/* ── Main Navigation (HIGH-TECH MOBILE HEADER + MODERN DROPDOWN) ───── */}
       <nav className="sticky top-0 z-50 bg-[#070e1f]/95 backdrop-blur-md border-b border-slate-800/80 shadow-2xl w-full">
         <div className="site-container h-16 sm:h-20 flex items-center justify-between gap-2 sm:gap-4 px-3 sm:px-6">
-          {/* Logo & Clinic Name */}
-          <a href="#home" className="flex items-center gap-2.5 sm:gap-3 min-w-0 flex-1 sm:flex-initial">
-            <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br from-sky-500 to-teal-500 text-white font-black text-sm sm:text-lg flex items-center justify-center shadow-lg shadow-sky-500/20 flex-shrink-0">
+          {/* Logo & Hot Title */}
+          <a href="#home" className="flex items-center gap-2.5 sm:gap-3 min-w-0">
+            <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-gradient-to-tr from-sky-500 via-teal-500 to-emerald-400 text-white font-black text-base sm:text-lg flex items-center justify-center shadow-lg shadow-sky-500/30 flex-shrink-0">
               HS
             </div>
-            <div className="min-w-0 flex flex-col justify-center">
-              <span className="font-black text-xs sm:text-base md:text-lg text-white leading-tight tracking-tight whitespace-nowrap">
-                High Springs Pediatrics
-              </span>
-              <span className="text-[10px] sm:text-xs text-sky-400 font-semibold tracking-wide whitespace-nowrap">
-                &amp; Primary Care
-              </span>
+            <div className="flex flex-col justify-center min-w-0">
+              <div className="font-black text-sm sm:text-base md:text-lg tracking-tight leading-tight text-white whitespace-nowrap">
+                High Springs <span className="bg-gradient-to-r from-sky-400 to-teal-400 bg-clip-text text-transparent">Pediatrics</span>
+              </div>
+              <div className="text-[10px] sm:text-xs font-bold text-slate-300 tracking-wide uppercase whitespace-nowrap">
+                &amp; Adult Primary Care
+              </div>
             </div>
           </a>
 
@@ -192,11 +192,11 @@ function App() {
             ))}
           </div>
 
-          {/* Nav Right */}
+          {/* Nav Right Quick Action */}
           <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
             <a
               href={CLINIC.phoneTel}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-gradient-to-r from-sky-600 to-teal-600 hover:from-sky-500 hover:to-teal-500 text-white text-xs sm:text-sm font-bold shadow-md whitespace-nowrap active:scale-95 transition-transform"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-gradient-to-r from-sky-600 via-teal-600 to-emerald-600 hover:from-sky-500 hover:to-emerald-500 text-white text-xs sm:text-sm font-extrabold shadow-lg shadow-sky-500/20 whitespace-nowrap active:scale-95 transition-all"
             >
               <PhoneIcon />
               <span className="hidden sm:inline">{CLINIC.phone}</span>
@@ -205,7 +205,7 @@ function App() {
 
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2 rounded-xl text-slate-300 hover:text-white bg-slate-800/80 border border-slate-700/80 active:scale-95"
+              className="lg:hidden p-2.5 rounded-xl text-slate-200 hover:text-white bg-slate-800/90 border border-sky-500/30 shadow-md active:scale-95 transition-all"
               aria-label="Toggle Mobile Menu"
             >
               {mobileMenuOpen ? <CloseIcon /> : <MenuIcon />}
@@ -213,41 +213,41 @@ function App() {
           </div>
         </div>
 
-        {/* Slide-Down Mobile Drawer Menu */}
+        {/* High-Tech Mobile Glassmorphic Dropdown */}
         <AnimatePresence>
           {mobileMenuOpen && (
             <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.22, ease: 'easeInOut' }}
-              className="lg:hidden border-t border-slate-800 bg-[#050b18] px-4 py-4 shadow-2xl overflow-hidden"
+              initial={{ opacity: 0, y: -10, scale: 0.98 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: -10, scale: 0.98 }}
+              transition={{ duration: 0.2, ease: 'easeOut' }}
+              className="lg:hidden mx-3 mb-4 rounded-3xl border border-sky-500/30 bg-slate-950/95 backdrop-blur-2xl px-4 py-5 shadow-2xl overflow-hidden"
             >
-              <div className="space-y-1">
+              <div className="grid grid-cols-2 gap-2">
                 {navLinks.map((link) => (
                   <a
                     key={link.label}
                     href={link.href}
                     onClick={() => setMobileMenuOpen(false)}
-                    className="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm font-bold text-slate-200 hover:bg-sky-600/15 hover:text-sky-400 transition-all"
+                    className="flex items-center justify-between px-3.5 py-3 rounded-2xl bg-slate-900/90 hover:bg-sky-600/20 text-xs font-bold text-slate-100 border border-slate-800 hover:border-sky-400/40 transition-all shadow-sm"
                   >
                     <span>{link.label}</span>
-                    <span className="text-slate-500 text-xs">&rarr;</span>
+                    <span className="text-sky-400 font-extrabold">&rarr;</span>
                   </a>
                 ))}
               </div>
 
-              <div className="mt-3.5 pt-3.5 border-t border-slate-800 space-y-2">
+              <div className="mt-4 pt-4 border-t border-slate-800/80 space-y-2">
                 <a
                   href={CLINIC.phoneTel}
-                  className="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl bg-sky-600 hover:bg-sky-500 text-white text-xs sm:text-sm font-bold shadow-md"
+                  className="flex items-center justify-center gap-2 w-full py-3 rounded-2xl bg-gradient-to-r from-sky-600 to-teal-600 hover:from-sky-500 hover:to-teal-500 text-white text-xs sm:text-sm font-extrabold shadow-lg shadow-sky-600/30"
                 >
                   <PhoneIcon /> Call Office: {CLINIC.phone}
                 </a>
                 <a
                   href="#forms"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl bg-slate-800 text-slate-200 text-xs font-bold border border-slate-700"
+                  className="flex items-center justify-center gap-2 w-full py-2.5 rounded-2xl bg-slate-900 text-slate-200 text-xs font-bold border border-slate-700/80"
                 >
                   <FileTextIcon /> Download Registration Forms (PDF)
                 </a>
@@ -257,7 +257,7 @@ function App() {
         </AnimatePresence>
       </nav>
 
-      {/* ── Hero Section (CLEAR VISIBLE CLINIC PICTURE + BALANCED HEADLINE) ── */}
+      {/* ── Hero Section (HOT TITLE + CRISP CLINIC SHOWCASE) ── */}
       <section id="home" className="section-wrapper relative bg-[#070e1f] text-white py-12 sm:py-20 lg:py-28 overflow-hidden">
         <div className="absolute inset-0 z-0 pointer-events-none opacity-40">
           <Particles
@@ -274,18 +274,23 @@ function App() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-sky-500/20 text-sky-200 text-xs sm:text-sm font-semibold mb-4 border border-sky-400/30 backdrop-blur-md shadow-md"
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sky-500/20 text-sky-200 text-xs font-bold mb-4 border border-sky-400/40 backdrop-blur-md shadow-lg"
           >
-            <ShinyText text="High Springs, Florida • Practice Established 2004" color="#bae6fd" shineColor="#ffffff" speed={2.5} />
+            <ShinyText text="High Springs, FL • Practice Established 2004" color="#bae6fd" shineColor="#ffffff" speed={2.5} />
           </motion.div>
 
+          {/* HOT MOBILE & DESKTOP TITLE */}
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight tracking-tight mb-3 text-center max-w-4xl"
+            className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[1.15] mb-4 text-center max-w-4xl"
           >
-            Pediatric Care &amp; Adult Internal Medicine
+            <span className="text-white">Expert Family Care</span>
+            <br />
+            <span className="bg-gradient-to-r from-sky-400 via-teal-300 to-emerald-400 bg-clip-text text-transparent">
+              From Birth to Seniors
+            </span>
           </motion.h1>
 
           <motion.p
@@ -294,7 +299,7 @@ function App() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-xs sm:text-base md:text-lg text-slate-300 mb-6 leading-relaxed max-w-2xl mx-auto font-medium text-center"
           >
-            Trusted family healthcare led by founding pediatrician <strong>Dr. Nasir Ahmed, M.D.</strong> and internal medicine physician <strong>Dr. Ramin Ahmad, M.D.</strong>
+            Led by founding pediatrician <strong>Dr. Nasir Ahmed, M.D.</strong> and internal medicine physician <strong>Dr. Ramin Ahmad, M.D.</strong> Dedicated family healthcare in High Springs.
           </motion.p>
 
           {/* Prominent Building Showcase Box */}
@@ -379,7 +384,7 @@ function App() {
         </div>
       </section>
 
-      {/* ── Meet Our Physicians (UNIFIED 1200PX WIDTH - EXACT SAME AS SERVICES & FORMS) ── */}
+      {/* ── Meet Our Physicians (HOT TITLE + PERFECTLY FITTED DOCTOR PICTURES) ── */}
       <section id="physicians" className="section-wrapper py-16 sm:py-24 lg:py-28 bg-[#070e1f] text-white">
         <div className="site-container flex flex-col items-center">
           <motion.div
@@ -389,18 +394,16 @@ function App() {
             transition={{ duration: 0.5 }}
             className="text-center max-w-3xl mx-auto mb-10 sm:mb-14"
           >
-            <span className="text-xs font-bold uppercase tracking-wider text-sky-400 block mb-2 text-center">
-              Medical Leadership
-            </span>
-            <h2 className="text-2xl sm:text-4xl font-black text-white text-center">
-              Meet Our Physicians
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-center">
+              <span className="text-white">Meet Our </span>
+              <span className="bg-gradient-to-r from-sky-400 to-teal-400 bg-clip-text text-transparent">Physicians</span>
             </h2>
-            <p className="text-xs sm:text-base text-slate-300 mt-2 text-center">
-              Dr. Nasir Ahmed and his son Dr. Ramin Ahmad provide trusted family healthcare under one roof.
+            <p className="text-xs sm:text-base text-slate-300 mt-2.5 text-center max-w-xl mx-auto">
+              Dr. Nasir Ahmed and his son Dr. Ramin Ahmad provide compassionate family healthcare under one roof.
             </p>
           </motion.div>
 
-          {/* Symmetrical 2-Card Grid (1200px Width - Exactly Symmetrical) */}
+          {/* Symmetrical 2-Card Grid (1200px Width - Perfectly Symmetrical) */}
           <div
             className="grid md:grid-cols-2 gap-6 lg:gap-8 items-stretch w-full max-w-[1200px]"
             style={{ marginLeft: 'auto', marginRight: 'auto' }}
@@ -416,18 +419,20 @@ function App() {
               >
                 <SpotlightCard
                   spotlightColor={doc.spotlight}
-                  className="w-full bg-slate-900/90 rounded-3xl border border-slate-800 p-6 sm:p-9 shadow-2xl flex flex-col justify-between h-full card-pop-box"
+                  className="w-full bg-slate-900/90 rounded-3xl border border-slate-800 p-6 sm:p-8 md:p-9 shadow-2xl flex flex-col justify-between h-full card-pop-box"
                 >
                   <div>
-                    {/* Doctor Profile Header */}
+                    {/* Doctor Profile Header with Perfectly Fitted Large Photo */}
                     <div className="flex flex-col sm:flex-row items-center sm:items-start gap-5 sm:gap-6 mb-5 text-center sm:text-left">
-                      <img
-                        src={doc.image}
-                        alt={doc.name}
-                        className="w-36 h-36 sm:w-36 sm:h-36 md:w-40 md:h-40 rounded-2xl object-cover border-2 border-sky-400/50 shadow-2xl flex-shrink-0 mx-auto sm:mx-0 zoom-img"
-                      />
-                      <div className="min-w-0">
-                        <span className="text-xs font-bold uppercase text-sky-400 tracking-wider block mb-1">
+                      <div className="w-40 h-40 sm:w-40 sm:h-40 md:w-44 md:h-44 rounded-3xl overflow-hidden ring-4 ring-sky-500/25 border-2 border-sky-400/60 shadow-2xl flex-shrink-0 mx-auto sm:mx-0 bg-slate-950">
+                        <img
+                          src={doc.image}
+                          alt={doc.name}
+                          className="w-full h-full object-cover object-top zoom-img"
+                        />
+                      </div>
+                      <div className="min-w-0 flex-1">
+                        <span className="inline-block px-3 py-1 rounded-full bg-sky-500/15 border border-sky-400/30 text-sky-300 text-[11px] font-bold tracking-wider uppercase mb-2">
                           {doc.role}
                         </span>
                         <h3 className="text-xl sm:text-2xl md:text-3xl font-black text-white leading-tight">
@@ -459,7 +464,7 @@ function App() {
         </div>
       </section>
 
-      {/* ── Our Core Services (UNIFIED 1200PX WIDTH - EXACT SAME AS PHYSICIANS & FORMS) ── */}
+      {/* ── Our Core Services (HOT TITLE + STRAIGHT EQUAL-HEIGHT BOXES) ── */}
       <section id="services" className="section-wrapper py-16 sm:py-24 lg:py-28 bg-[#0a1224] border-y border-slate-800/80 text-white">
         <div className="site-container">
           <motion.div
@@ -469,13 +474,11 @@ function App() {
             transition={{ duration: 0.5 }}
             className="text-center max-w-3xl mx-auto mb-10 sm:mb-14"
           >
-            <span className="text-xs font-bold uppercase tracking-wider text-sky-400 block mb-2 text-center">
-              Care For Every Age
-            </span>
-            <h2 className="text-2xl sm:text-4xl font-black text-white text-center">
-              Our Core Services
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-center">
+              <span className="text-white">Our Core </span>
+              <span className="bg-gradient-to-r from-sky-400 to-teal-400 bg-clip-text text-transparent">Services</span>
             </h2>
-            <p className="text-xs sm:text-base text-slate-300 mt-2 text-center">
+            <p className="text-xs sm:text-base text-slate-300 mt-2.5 text-center max-w-xl mx-auto">
               From newborn milestone checks to adult preventive physicals and chronic condition care.
             </p>
           </motion.div>
@@ -545,7 +548,7 @@ function App() {
         </div>
       </section>
 
-      {/* ── Patient Registration Forms (PDF) (UNIFIED 1200PX WIDTH - EXACT SAME AS SERVICES) ── */}
+      {/* ── Patient Registration Forms (PDF) (HOT TITLE + STRAIGHT 1200PX CARDS) ── */}
       <section id="forms" className="section-wrapper py-16 sm:py-24 lg:py-28 bg-[#070e1f] text-white">
         <div className="site-container flex flex-col items-center">
           <motion.div
@@ -555,13 +558,11 @@ function App() {
             transition={{ duration: 0.5 }}
             className="text-center max-w-3xl mx-auto mb-10 sm:mb-14"
           >
-            <span className="text-xs font-bold uppercase tracking-wider text-emerald-400 block mb-2 text-center">
-              Fast-Track Your Visit
-            </span>
-            <h2 className="text-2xl sm:text-4xl font-black text-white text-center">
-              Patient Registration Forms (PDF)
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-center">
+              <span className="text-white">Patient Registration </span>
+              <span className="bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">Forms (PDF)</span>
             </h2>
-            <p className="text-xs sm:text-base text-slate-300 mt-2 text-center">
+            <p className="text-xs sm:text-base text-slate-300 mt-2.5 text-center max-w-xl mx-auto">
               Download and complete your official forms prior to arrival to save waiting room time.
             </p>
           </motion.div>
@@ -745,11 +746,9 @@ function App() {
         <div className="site-container">
           <div className="grid lg:grid-cols-2 gap-10 items-start justify-center w-full max-w-[1200px] mx-auto" style={{ marginLeft: 'auto', marginRight: 'auto' }}>
             <div>
-              <span className="text-xs font-bold uppercase tracking-wider text-sky-400 block mb-2">
-                Office Information
-              </span>
-              <h2 className="text-2xl sm:text-4xl font-black mb-4 sm:mb-6">
-                Visit or Call Our Clinic
+              <h2 className="text-3xl sm:text-4xl font-black mb-4 sm:mb-6">
+                <span className="text-white">Visit or Call </span>
+                <span className="bg-gradient-to-r from-sky-400 to-teal-400 bg-clip-text text-transparent">Our Clinic</span>
               </h2>
               <p className="text-xs sm:text-base text-slate-300 mb-6 leading-relaxed">
                 Conveniently located on US Highway 441 in High Springs with ground-level parking and easy stroller access.
