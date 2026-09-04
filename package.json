@@ -4,10 +4,11 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
+    "dev": "node scripts/restore-dev.js && vite",
+    "build": "node scripts/restore-dev.js && tsc -b && vite build && node scripts/sync-deployment.js",
     "lint": "oxlint",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "npm run build"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.3",
